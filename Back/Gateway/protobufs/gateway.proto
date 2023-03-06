@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package gateway;
+
+import "catalog.proto";
+import "order.proto";
+
+
+service Gateway {
+    rpc GetCatalog (CatalogRequest) returns (CatalogResponse) {}
+    rpc GetOrder (OrderRequest) returns (OrderResponse) {}
+    rpc GetRecommendation (RecommendationRequest) returns (RecommendationResponse) {}
+}
+
+message CatalogRequest {
+
+}
+
+message CatalogResponse {
+    repeated CatalogItem items = 1;
+}
+
+message OrderRequest {
+
+}
+
+message OrderResponse {
+    repeated OrderItem items = 1;
+}
+
+message RecommendationRequest {
+    
+}
+
+message RecommendationResponse {
+    repeated RecommendationItem items = 1;
+}
