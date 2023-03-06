@@ -23,7 +23,7 @@ const productService = grpc.loadPackageDefinition(packageDefinition).ProductServ
 function main(){
 
   const idProduct = 1;
-  const title = 'Tour1';
+  const title = '';
   const client = new productService(REMOTE_HOST,grpc.credentials.createInsecure());
 
   client.AddProduct({id_product: idProduct}, {title: title} , (err, data) => {

@@ -3,14 +3,15 @@ syntax = "proto3";
 message Product{
     int32 id_Product = 1;
     string title= 2;
-    string note = 3;
+    double price = 3;
 }
 
 message TransactionResponse{
     int32 status_code = 1;
+    string title = 2;
+    double price = 3;
 }
 
 service ProductService{
     rpc AddProduct(Product) returns (TransactionResponse) {}
 }
-
