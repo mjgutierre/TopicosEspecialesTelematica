@@ -2,13 +2,13 @@ syntax = "proto3";
 
 message ProductOrder{
     int32 id_Product = 1;
-    string title= 2;
-    string note = 3;
+    string customer_name= 2;
+    string quantity = 3;
 }
 
 message OrderResponse{
     int32 status_code = 1;
-    string title=2;
+    string customer_name=2;
 }
 
 service OrderService{

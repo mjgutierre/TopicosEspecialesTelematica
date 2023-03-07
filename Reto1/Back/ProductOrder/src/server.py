@@ -7,7 +7,7 @@ import catalog_pb2_grpc
 import order_pb2
 import order_pb2_grpc
 
-HOST = '[::]:8080'
+HOST = '[::]:50051'
 
 class ProductService(catalog_pb2_grpc.ProductServiceServicer):
    def AddProduct(self, request, context):
@@ -17,7 +17,7 @@ class ProductService(catalog_pb2_grpc.ProductServiceServicer):
 class OrderService(order_pb2_grpc.OrderServiceServicer):
    def CreateOrder(self, request, context):
       print("Request is received: " + str(request))
-      return order_pb2.OrderResponse(title=2)
+      return order_pb2.OrderResponse(customer_name=2)
  
 
 def serve():

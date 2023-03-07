@@ -21,6 +21,7 @@ console.info("Consumer service is started...");
 const productService = grpc.loadPackageDefinition(packageDefinition).ProductService;
 
 function main(){
+  var server =new grpc.Server();
 
   const idProduct = 1;
   const title = '';
@@ -33,6 +34,7 @@ function main(){
       console.log('Response received from remote service:', data); // API response
     }
    });
+    
 
 };
 

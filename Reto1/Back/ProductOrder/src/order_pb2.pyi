@@ -5,19 +5,19 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class OrderResponse(_message.Message):
-    __slots__ = ["status_code", "title"]
+    __slots__ = ["customer_name", "status_code"]
+    CUSTOMER_NAME_FIELD_NUMBER: _ClassVar[int]
     STATUS_CODE_FIELD_NUMBER: _ClassVar[int]
-    TITLE_FIELD_NUMBER: _ClassVar[int]
+    customer_name: str
     status_code: int
-    title: str
-    def __init__(self, status_code: _Optional[int] = ..., title: _Optional[str] = ...) -> None: ...
+    def __init__(self, status_code: _Optional[int] = ..., customer_name: _Optional[str] = ...) -> None: ...
 
 class ProductOrder(_message.Message):
-    __slots__ = ["id_Product", "note", "title"]
+    __slots__ = ["customer_name", "id_Product", "quantity"]
+    CUSTOMER_NAME_FIELD_NUMBER: _ClassVar[int]
     ID_PRODUCT_FIELD_NUMBER: _ClassVar[int]
-    NOTE_FIELD_NUMBER: _ClassVar[int]
-    TITLE_FIELD_NUMBER: _ClassVar[int]
+    QUANTITY_FIELD_NUMBER: _ClassVar[int]
+    customer_name: str
     id_Product: int
-    note: str
-    title: str
-    def __init__(self, id_Product: _Optional[int] = ..., title: _Optional[str] = ..., note: _Optional[str] = ...) -> None: ...
+    quantity: str
+    def __init__(self, id_Product: _Optional[int] = ..., customer_name: _Optional[str] = ..., quantity: _Optional[str] = ...) -> None: ...
