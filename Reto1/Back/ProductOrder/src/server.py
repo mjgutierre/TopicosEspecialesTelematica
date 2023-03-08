@@ -1,23 +1,22 @@
 from concurrent import futures
-
 import grpc
+
 import catalog_pb2
 import catalog_pb2_grpc
-
 import order_pb2
 import order_pb2_grpc
 
-HOST = '[::]:50051'
+HOST = '[::]:50052'
 
 class ProductService(catalog_pb2_grpc.ProductServiceServicer):
    def AddProduct(self, request, context):
       print("Request is received: " + str(request))
-      return catalog_pb2.TransactionResponse(status_code=1)
+      return catalog_pb2.TransactionResponse(status_code=0)
  
 class OrderService(order_pb2_grpc.OrderServiceServicer):
    def CreateOrder(self, request, context):
       print("Request is received: " + str(request))
-      return order_pb2.OrderResponse(customer_name=2)
+      return order_pb2.OrderResponse(status_code=1)
  
 
 def serve():

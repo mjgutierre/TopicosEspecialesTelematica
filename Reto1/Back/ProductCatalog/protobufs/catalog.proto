@@ -7,7 +7,8 @@ message Product{
 }
 
 message TransactionResponse{
-    int32 status_code = 1;
+    int32 status_code = 0;
+    int32 id_Product = 1;
     string title = 2;
     double price = 3;
 }

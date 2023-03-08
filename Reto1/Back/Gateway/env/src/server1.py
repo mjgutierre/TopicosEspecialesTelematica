@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+#Librerias y protobufs 
 import grpc
 import catalog_pb2
 import catalog_pb2_grpc
@@ -7,47 +8,47 @@ import order_pb2_grpc
 
 app = Flask(__name__)
 
-# Conexión al servidor de catálogo
-catalog_channel = grpc.insecure_channel('localhost:50051')
-catalog_stub = catalog_pb2_grpc.ProductServiceStub(catalog_channel)
+# Conexión al servidor de catálogo y catalogo con la descripcion de sus puertos 
+catalogCanalComuni = grpc.insecure_channel('localhost:50051')
+orderCanalComuni = grpc.insecure_channel('localhost:50052')
+orderCliente = order_pb2_grpc.OrderServiceStub(orderCanalComuni)
+catalogCliente = catalog_pb2_grpc.ProductServiceStub(catalogCanalComuni)
 
-# Conexión al servidor de órdenes
-order_channel = grpc.insecure_channel('localhost:50052')
-order_stub = order_pb2_grpc.OrderServiceStub(order_channel)
-
+#Creacion de las rutas para la aplicacion con sus metodos y llamadas desde el cliente al servidor
+#RUTA DE CATALOGO
 @app.route('/catalog', methods=['POST'])
 def add_product():
-    # Parseamos los datos recibidos desde el cliente
+    # datos recibidos desde el cliente
     data = request.get_json()
     id_Product = data.get('id_Product')
     price = data.get('price')
     title = data.get('title')
 
-    # Creamos el producto utilizando el stub de gRPC
-    response = catalog_stub.AddProduct(catalog_pb2.Product(
+    # En nuestro caso añadimos el producto al catalogo 
+    response = catalogCliente.AddProduct(catalog_pb2.Product(
         id_Product=id_Product,
         price=price,
         title=title
     ))
+    #respuesta del json, retornara el id_product
+    return jsonify({'id_Product': response.status_code})
 
-    return jsonify({'id_Product': 'HOLA'})#response.product_id})
-
+#RUTA DE ORDEN
 @app.route('/order', methods=['POST'])
 def create_order():
-    # Parseamos los datos recibidos desde el cliente
     data = request.get_json()
-    customer_name = data.get('customer_name')
+    title = data.get('title')
     id_Product = data.get('id_Product')
     quantity = data.get('quantity')
 
-    # Creamos la orden utilizando el stub de gRPC
-    response = order_stub.CreateOrder(order_pb2.ProductOrder(
-        customer_name=customer_name,
+    response = orderCliente.CreateOrder(order_pb2.ProductOrder(
+        title=title,
         id_Product=id_Product,
         quantity=quantity
     ))
 
-    return jsonify({'order_id': 'HOLA2'})#response.order_id})
+    return jsonify({'order_id': response.status_code})
 
+#MAIN
 if __name__ == '__main__':
     app.run(debug=True)

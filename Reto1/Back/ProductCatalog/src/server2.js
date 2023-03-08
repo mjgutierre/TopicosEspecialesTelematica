@@ -12,11 +12,11 @@ server.addService(catalog.ProductService.service, {
   AddProduct: async (call) => {
     const { id_Product, title, price } = call.request;
     console.log(`Adding product ${title} with id ${id_Product} and price ${price}`);
-    return{ status_code: 200, title, price };
+    return{ status_code: 200, id_Product, title, price };
   }
 });
 
-const port = 8080;
+const port = 50051;
   server.bindAsync(`0.0.0.0:${port}`, grpc.ServerCredentials.createInsecure(), () => {
   console.log(`Server running on port ${port}`);
   server.start();
