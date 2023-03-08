@@ -24,6 +24,11 @@ Para el despliegue de esta aplicacion se requeria una extensa lectura de documen
 
 ## Arquitectura de la solución planteada. 
 > En este punto por favor describa de igual forma, que patrones logró implementar.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/68908889/223600284-11ab0ab8-3f4a-4b87-8735-63cb12b0d3ad.png" alt="ArquitecturagRPC" width="600" height="400" style="display: block; margin: auto;">
+</p>
+
 Esta es la arquitectura del proyecto. Para esta aplicacion se realizo un comercio electronico con API Gateway que gestiona las peticiones HTTP entrantres y las reenvía a los microservicios. 
 
 - El primer servicio como se ve en el diagram es el de Catalogo, en donde los usuarios podran ver el producto, en este caso es un Tour, que contiene los campos de titulo y precio. 
@@ -34,8 +39,25 @@ Para termminos del proyecto se utilizó gRPC, un framework que puede conectar de
 Tambien utilizamos en terminos de patrones una pasarela API para centralizar el acceso a los servicios de backend y exponer una API pública para los clientes. Esto ayuda a reducir la complejidad y a proporcionar una mayor seguridad.
 
 ## Resultados logrados: 
-Las pruebas que se hicieron fueron las siguientes: 
 > Por favor describa claramente en puntos de lo solicitado logró alcanzar los objetivos propuestos. De igual forma, indique cuales objetivos no alcanzo a desarrollar.
+
+Para el cliente, utilizamos una herramienta llamada Insomnia, es muy parecida a Postman y nos ayudo con las peticiones HTTP. Las pruebas que se hicieron fueron las siguientes: 
+
+- Para el servicio de ProductOrder, se envio un JSON con los siguientes campos y estas fueron las respuestas recibidas en el servidor y el API respectivamente.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/68908889/223601360-456f26ea-1896-4b39-a21d-e12448a3ddc4.jpeg" alt="PRUEBAORDENInsomnia" width="694" height="130" style="display: block; margin: auto;">
+</p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/68908889/223601364-2c3ae6a5-9148-4e67-a43e-73b267cefb00.jpeg" alt="PRUEBAORDERConsola" width="500" height="80" style="display: block; margin: auto;">
+</p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/68908889/223601366-b6f08bfd-1362-465f-ba0f-7f2a848c27a2.jpeg" alt="PRUEBAOrden" width="500" height="50" style="display: block; margin: auto;">
+</p>
+
+- Para el servicio de ProductOrder, se envio un JSON con los siguientes campos y estas fueron las respuestas recibidas en el servidor y el API respectivamente.
+
+
+
 
 ## Descripción técnica de la solución implementada: 
 > Por favor indique todos los aspectos técnicos de la solución (librerías, como se debe compilar, etc, con las versiones de cada elemento que utilice). Igualmente, todos los aspectos de parametrización que se requiere, direcciones IPs, puertos, conexión a bases de datos, etc.
