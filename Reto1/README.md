@@ -7,7 +7,7 @@ Topicos Especiales en Telematica.
 Maria José Gutiérrez Estrada. ***mjgutierre@eafit.edu.co***
 
 ## Tabla de contenido 
-1. [Descripción y alcance del proyecto](https://github.com/mjgutierre/TopicosEspecialesTelematica/edit/master/Reto1/README.md#descripción-y-alcance-del-proyecto)
+1. [Descripción y alcance del proyecto](https://github.com/mjgutierre/TopicosEspecialesTelematica/blob/master/Reto1/README.md#descripción-y-alcance-del-proyecto)
 2. [Estructura del proyecto](https://github.com/mjgutierre/TopicosEspecialesTelematica/edit/master/Reto1/README.md#estructura-del-proyecto)
 3. [Arquitectura del proyecto](https://github.com/mjgutierre/TopicosEspecialesTelematica/edit/master/Reto1/README.md#arquitectura-de-la-solución-planteadao)
 4. [Resultados logrados](https://github.com/mjgutierre/TopicosEspecialesTelematica/edit/master/Reto1/README.md#resultados-logrados)
