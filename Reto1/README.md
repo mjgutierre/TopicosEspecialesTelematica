@@ -31,7 +31,7 @@ La definicion del servicio para la comunicacion se debia realizar con Protocolo 
 Para el despliegue de esta aplicacion se requeria una extensa lectura de documentacion para entender el protocolo que se esperaba utilizar y sus herramientas. Es importante para garantizar un sistema escalable que esta primera version funcione de manera confiable para luego en un entorno de producción seguir considerando nuevas funcionalidades para la correcta integracion entre llamados.
 
 ## Estructura del Proyecto. 
-> Detalle cómo se encuentra la estructura del proyecto en el repositorio.
+> Cómo se encuentra la estructura del proyecto en el repositorio.
 La estructura del proyecto tiene el siguiente orden:
 
 	Reto1
@@ -88,7 +88,7 @@ Para termminos del proyecto se utilizó gRPC, un framework que puede conectar de
 Tambien utilizamos en terminos de patrones una pasarela API para centralizar el acceso a los servicios de backend y exponer una API pública para los clientes. Esto ayuda a reducir la complejidad y a proporcionar una mayor seguridad.
 
 ## Resultados logrados: 
-> Por favor describa claramente en puntos de lo solicitado logró alcanzar los objetivos propuestos. De igual forma, indique cuales objetivos no alcanzo a desarrollar.
+> Descripcion de lo solicitado y lo alcanzado en cuanto a objetivos propuestos. De igual forma,los objetivos no alcanzados a desarrollar.
 
 Para el cliente, utilizamos una herramienta llamada Insomnia, es muy parecida a Postman y nos ayudo con las peticiones HTTP. Las pruebas que se hicieron fueron las siguientes: 
 
@@ -118,7 +118,7 @@ Para el cliente, utilizamos una herramienta llamada Insomnia, es muy parecida a 
 ### El alcance del proyecto fue la realizacion de la comunicacion de microservicios a traves de gRPC. Sin embargo, en terminos de funcionalidad, el proyecto todavia cuenta con oportunidades de mejora como la integracion de las bases de datos, mas cantidad de microservicios, un frontEnd para mejorar la experiencia de usuario y entre otras caracteristicas que harian de este proyecto un sistema escalable.
 
 ## Descripción técnica de la solución implementada / Guía de uso:
-> Por favor ilustre de manera clara, precisa y breve como se utiliza su solución Iindique todos los aspectos técnicos de la solución (librerías, como se debe compilar, etc, con las versiones de cada elemento que utilice). Igualmente, todos los aspectos de parametrización que se requiere, direcciones IPs, puertos, conexión a bases de datos, etc.
+> Como se utiliza la solución con todos los aspectos técnicos (librerías, como se debe compilar, etc, con las versiones de cada elemento que utilice). Igualmente, todos los aspectos de parametrización que se requiere, direcciones IPs, puertos, conexión a bases de datos, etc.
 
 
 - **Gateway**
