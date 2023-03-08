@@ -82,18 +82,74 @@ Para el cliente, utilizamos una herramienta llamada Insomnia, es muy parecida a 
 > Por favor ilustre de manera clara, precisa y breve como se utiliza su solución Iindique todos los aspectos técnicos de la solución (librerías, como se debe compilar, etc, con las versiones de cada elemento que utilice). Igualmente, todos los aspectos de parametrización que se requiere, direcciones IPs, puertos, conexión a bases de datos, etc.
 
 
-- Gateway
+- **Gateway**
 
 Al estar dentro de la carpeta procedemos a crear un entorno virtual o instalar los requerimientos desde nuestra consola en la maquina local.
 Para activar el entorno virtual podemos ejecutar en la carpeta de Gateway el siguiente comando:
 
-` .\Scripts\activate `
+        .\Scripts\activate 
 
-Si quieres la segunda opción, entonces ejecutar el siguiente codigo:
+Para instalar los requerimientos del txt podemos correr el siguiente comando:
 
-pip install requirements.txt
+        pip install requirements.txt
 
+Luego para correr nuestro Server.py (PUERTO 5000), debemos estar en la siguiente ruta  
+        
+        Reto1\Back\Gateway\env\src 
 
+y podemos ejecutar el comando:
+        
+        py server1.py
+        
+        
+- **ProductCatalog**
+
+Para activar el servidor de Catalogo (PUERTO 50051), debemos entrar en la siguiente ruta 
+
+        Reto1/Back/ProductCatalog/src
+        
+con el siguiente comando 
+        
+        npm start
+    
+- **ProductOrder**
+
+Para inicializar el servidor de Orden (PUERTO 50052), debemos estar en la ruta 
+        
+        Reto1/Back/ProductOrder/Src
+        
+con el comando 
+    
+        py server.py
+   
+
+Adicional a esto para hacer las peticiones por medio de Postman o Insomnia podemos utillizar los siguienetes archivos JSON 
+
+- Para hacer un metodo POST al servicio de ProductCatalog, debemos utilizar la siguiente URL
+
+      http://localhost:5000/catalog
+ 
+Con el siguiente archivo 
+
+    {
+	  "id_Product": 1,
+	  "price": 3.00,
+	  "title": "hola1"
+    }
+        
+- Para hacer un metodo POST al servicio de ProductOrder, debemos utilizar la siguiente URL
+ 
+        http://localhost:5000/order
+        
+Con el siguiente archivo 
+
+    {
+	"id_Product": 1,
+	"title": "TOUR1",
+	"quantity": 3
+    }
+    
+        
 ## Referencias.
 - [1]“Descripción general de gRPC | Documentación de API Gateway,” Google Cloud. https://cloud.google.com/api-gateway/docs/grpc-overview?hl=es-419#:~:text=With%20API%20Gateway%20for%20gRPC.
 - [2]ST0263, “st0263-2023-1/Laboratorio N1-RPC at main · ST0263/st0263-2023-1,” GitHub, Feb. 27, 2023. https://github.com/ST0263/st0263-2023-1/tree/main/Laboratorio%20N1-RPC .
