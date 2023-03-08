@@ -6,6 +6,15 @@ Topicos Especiales en Telematica.
 ## Datos del estudiante (s).
 Maria José Gutiérrez Estrada. ***mjgutierre@eafit.edu.co***
 
+## Tabla de contenido 
+1. [Descripción y alcance del proyecto](https://github.com/mjgutierre/TopicosEspecialesTelematica/edit/master/Reto1/README.md#descripción-y-alcance-del-proyecto)
+2. [Estructura del proyecto](https://github.com/mjgutierre/TopicosEspecialesTelematica/edit/master/Reto1/README.md#estructura-del-proyecto)
+3. [Arquitectura del proyecto](https://github.com/mjgutierre/TopicosEspecialesTelematica/edit/master/Reto1/README.md#arquitectura-de-la-solución-planteadao)
+4. [Resultados logrados](https://github.com/mjgutierre/TopicosEspecialesTelematica/edit/master/Reto1/README.md#resultados-logrados)
+5. [Descripción técnica / Guía de uso](https://github.com/mjgutierre/TopicosEspecialesTelematica/edit/master/Reto1/README.md#descripción-técnica-de-la-solución-implementada)
+6. [Referencias](https://github.com/mjgutierre/TopicosEspecialesTelematica/edit/master/Reto1/README.md#referencias)
+
+
 ## Descripción y alcance del proyecto.
 El objetivo de este proyecto principalmente es desarrollar habilidades de programación en la implementacion de un prototipo de aplicacion web para comercio electronico, utilizando como estilo arquitectonico los microservicios. 
 La comunicacion entre los procesos debe ser a traves de un middleware, en este caso, a traves de RPC (llamadas a a procedimientos remotos)
@@ -20,6 +29,7 @@ Estos tienen sus propias funcionalidades y a traves de una red de datos se comun
 La definicion del servicio para la comunicacion se debia realizar con Protocolo Buffers, es por esto que en los diferentes microservicios hay una carpeta llamada Protobufs que almacenan los archivos con la syntaxis correspondiente. 
 
 Para el despliegue de esta aplicacion se requeria una extensa lectura de documentacion para entender el protocolo que se esperaba utilizar y sus herramientas. Es importante para garantizar un sistema escalable que esta primera version funcione de manera confiable para luego en un entorno de producción seguir considerando nuevas funcionalidades para la correcta integracion entre llamados.
+
 ## Estructura del Proyecto. 
 > Detalle cómo se encuentra la estructura del proyecto en el repositorio.
 
@@ -61,19 +71,27 @@ Para el cliente, utilizamos una herramienta llamada Insomnia, es muy parecida a 
   <img src="https://user-images.githubusercontent.com/68908889/223605133-32cf21a3-d7be-4302-9810-ea7013c84812.png" alt="PRUEBASCATALOGOServidor" width="694" height="130" style="display: block; margin: auto;">
 </p>
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/68908889/223603425-656895b1-f5a6-48ea-b5dd-7e88fc46cbe7.jpeg" alt="PRUEBASCATALOGOAPI" width="350" height="70" style="display: block; margin: auto;">
+  <img src="https://user-images.githubusercontent.com/68908889/223607394-2a2d5f3f-c045-4c5b-bd1e-f177b9759df3.png" alt="PRUEBASCATALOGOAPI" width="350" height="40" style="display: block; margin: auto;">
 </p>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/68908889/223603428-bb28852a-463a-4b05-901d-d4cd12bc4c82.jpeg" alt="PRUEBASCATALOGOInsomnia" width="500" height="694" style="display: block; margin: auto;">
 </p>
 
 
-## Descripción técnica de la solución implementada: 
-> Por favor indique todos los aspectos técnicos de la solución (librerías, como se debe compilar, etc, con las versiones de cada elemento que utilice). Igualmente, todos los aspectos de parametrización que se requiere, direcciones IPs, puertos, conexión a bases de datos, etc.
+## Descripción técnica de la solución implementada / Guía de uso:
+> Por favor ilustre de manera clara, precisa y breve como se utiliza su solución Iindique todos los aspectos técnicos de la solución (librerías, como se debe compilar, etc, con las versiones de cada elemento que utilice). Igualmente, todos los aspectos de parametrización que se requiere, direcciones IPs, puertos, conexión a bases de datos, etc.
 
 
-## Guía de uso:
-> Por favor ilustre de manera clara, precisa y breve como se utiliza su solución.
+- Gateway
+
+Al estar dentro de la carpeta procedemos a crear un entorno virtual o instalar los requerimientos desde nuestra consola en la maquina local.
+Para activar el entorno virtual podemos ejecutar en la carpeta de Gateway el siguiente comando:
+
+` .\Scripts\activate `
+
+Si quieres la segunda opción, entonces ejecutar el siguiente codigo:
+
+pip install requirements.txt
 
 
 ## Referencias.
