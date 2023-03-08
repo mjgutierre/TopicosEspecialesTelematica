@@ -9,10 +9,10 @@ Maria José Gutiérrez Estrada. ***mjgutierre@eafit.edu.co***
 ## Tabla de contenido 
 1. [Descripción y alcance del proyecto](https://github.com/mjgutierre/TopicosEspecialesTelematica/blob/master/Reto1/README.md#descripción-y-alcance-del-proyecto)
 2. [Estructura del proyecto](https://github.com/mjgutierre/TopicosEspecialesTelematica/blob/master/Reto1/README.md#descripción-y-alcance-del-proyecto)
-3. [Arquitectura del proyecto](https://github.com/mjgutierre/TopicosEspecialesTelematica/edit/master/Reto1/README.md#arquitectura-de-la-solución-planteadao)
-4. [Resultados logrados](https://github.com/mjgutierre/TopicosEspecialesTelematica/edit/master/Reto1/README.md#resultados-logrados)
-5. [Descripción técnica / Guía de uso](https://github.com/mjgutierre/TopicosEspecialesTelematica/edit/master/Reto1/README.md#descripción-técnica-de-la-solución-implementada)
-6. [Referencias](https://github.com/mjgutierre/TopicosEspecialesTelematica/edit/master/Reto1/README.md#referencias)
+3. [Arquitectura del proyecto](https://github.com/mjgutierre/TopicosEspecialesTelematica/blob/master/Reto1/README.md#arquitectura-de-la-solución-planteada)
+4. [Resultados logrados](https://github.com/mjgutierre/TopicosEspecialesTelematica/blob/master/Reto1/README.md#resultados-logrados)
+5. [Descripción técnica / Guía de uso](https://github.com/mjgutierre/TopicosEspecialesTelematica/blob/master/Reto1/README.md#descripción-técnica-de-la-solución-implementada--guía-de-uso)
+6. [Referencias](https://github.com/mjgutierre/TopicosEspecialesTelematica/blob/master/Reto1/README.md#referencias)
 
 
 ## Descripción y alcance del proyecto.
