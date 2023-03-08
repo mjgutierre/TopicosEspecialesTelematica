@@ -32,6 +32,44 @@ Para el despliegue de esta aplicacion se requeria una extensa lectura de documen
 
 ## Estructura del Proyecto. 
 > Detalle cómo se encuentra la estructura del proyecto en el repositorio.
+La estructura del proyecto tiene el siguiente orden:
+
+	Reto1
+	 Back
+	   Gateway\env
+	    Include 
+	    Lib
+	    protobufs 
+	     catalog.proto
+	     order.proto
+	    Scripts 
+	    src
+	     catalog_pb2_grpc.py
+	     .
+	     .
+	     .
+	     server1.py
+	     requirements.txt
+	  ProductCatalog
+	   protobufs
+	    catalog.proto
+	   src
+	    node_modules
+	    .env
+	    package-lock.json
+	    package.json 
+	    server2.js
+	  ProductOrder
+	   protobufs 
+	    catalog.proto
+	    order.proto
+	   src
+	    catalog_pb2_grpc.py
+	    .
+	    .
+	    server.py
+	
+### En general se tienen 3 carpetas principales Gateway, ProductCatalog, ProductOrder. Estos son los servicios y dentro de estos cada uno tiene una carpeta llamada protobufs en donde contienen los archivos proto, y una carpeta llamada src en donde se almacena el codigo de servidores y los modulos de las librerias.
 
 ## Arquitectura de la solución planteada. 
 > En este punto describir que patrones se implementaron.
@@ -77,6 +115,7 @@ Para el cliente, utilizamos una herramienta llamada Insomnia, es muy parecida a 
   <img src="https://user-images.githubusercontent.com/68908889/223603428-bb28852a-463a-4b05-901d-d4cd12bc4c82.jpeg" alt="PRUEBASCATALOGOInsomnia" width="500" height="694" style="display: block; margin: auto;">
 </p>
 
+### El alcance del proyecto fue la realizacion de la comunicacion de microservicios a traves de gRPC. Sin embargo, en terminos de funcionalidad, el proyecto todavia cuenta con oportunidades de mejora como la integracion de las bases de datos, mas cantidad de microservicios, un frontEnd para mejorar la experiencia de usuario y entre otras caracteristicas que harian de este proyecto un sistema escalable.
 
 ## Descripción técnica de la solución implementada / Guía de uso:
 > Por favor ilustre de manera clara, precisa y breve como se utiliza su solución Iindique todos los aspectos técnicos de la solución (librerías, como se debe compilar, etc, con las versiones de cada elemento que utilice). Igualmente, todos los aspectos de parametrización que se requiere, direcciones IPs, puertos, conexión a bases de datos, etc.
