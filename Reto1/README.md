@@ -1,6 +1,7 @@
 # MICROSERVICIOS COMUNICADOS CON GRPC
 
 ## Información de la asignatura.
+Topicos Especiales en Telematica.
 
 ## Datos del estudiante (s).
 Maria José Gutiérrez Estrada. ***mjgutierre@eafit.edu.co***
@@ -20,10 +21,10 @@ La definicion del servicio para la comunicacion se debia realizar con Protocolo 
 
 Para el despliegue de esta aplicacion se requeria una extensa lectura de documentacion para entender el protocolo que se esperaba utilizar y sus herramientas. Es importante para garantizar un sistema escalable que esta primera version funcione de manera confiable para luego en un entorno de producción seguir considerando nuevas funcionalidades para la correcta integracion entre llamados.
 ## Estructura del Proyecto. 
-> Detalle cómo se encuentra la estructura del proyecto en su repositorio.
+> Detalle cómo se encuentra la estructura del proyecto en el repositorio.
 
 ## Arquitectura de la solución planteada. 
-> En este punto por favor describa de igual forma, que patrones logró implementar.
+> En este punto describir que patrones se implementaron.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/68908889/223600284-11ab0ab8-3f4a-4b87-8735-63cb12b0d3ad.png" alt="ArquitecturagRPC" width="600" height="400" style="display: block; margin: auto;">
@@ -54,9 +55,17 @@ Para el cliente, utilizamos una herramienta llamada Insomnia, es muy parecida a 
   <img src="https://user-images.githubusercontent.com/68908889/223601366-b6f08bfd-1362-465f-ba0f-7f2a848c27a2.jpeg" alt="PRUEBAOrden" width="500" height="50" style="display: block; margin: auto;">
 </p>
 
-- Para el servicio de ProductOrder, se envio un JSON con los siguientes campos y estas fueron las respuestas recibidas en el servidor y el API respectivamente.
+- Para el servicio de ProductCatalog, se envio un JSON con los siguientes campos y estas fueron las respuestas recibidas en el servidor y el API respectivamente.
 
-
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/68908889/223605133-32cf21a3-d7be-4302-9810-ea7013c84812.png" alt="PRUEBASCATALOGOServidor" width="694" height="130" style="display: block; margin: auto;">
+</p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/68908889/223603425-656895b1-f5a6-48ea-b5dd-7e88fc46cbe7.jpeg" alt="PRUEBASCATALOGOAPI" width="350" height="70" style="display: block; margin: auto;">
+</p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/68908889/223603428-bb28852a-463a-4b05-901d-d4cd12bc4c82.jpeg" alt="PRUEBASCATALOGOInsomnia" width="500" height="694" style="display: block; margin: auto;">
+</p>
 
 
 ## Descripción técnica de la solución implementada: 
