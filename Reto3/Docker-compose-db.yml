@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+  db:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: user
+      MYSQL_USER: reto3user
+      MYSQL_PASSWORD: 1234
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - drupal_net
+
+volumes:
+  db_data:
+
+networks:
+  drupal_net:
