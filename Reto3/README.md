@@ -14,6 +14,23 @@ arquitectura:
   5. Tener 1 instancia de archivos distribuidos en NFS.
 
  ![image](https://user-images.githubusercontent.com/68908889/232166200-d585fa91-665b-4756-a80c-d0bb6818a142.png)
+ 
+ - BD IP PRIV 172.31.91.127
+ Docker:MariaDB:
+ 3306
+ VM
+ 
+ - IP-priv: z.y.x.y
+Linux:NFSServer
+VM
+
+- IP-priv: x.x.z.z
+Docker:Drupal1:80
+VM
+
+- IP-priv: x.x.z.z
+Docker:Drupal2:80
+VM
 
 ## Especificaciones Técnicas
 
