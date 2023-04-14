@@ -17,6 +17,6 @@ arquitectura:
 
 ## Especificaciones Técnicas
 
-Para nuestra version estos son los apectos importantes a considerar 
+Para nuestra version estos son los aspectos importantes a considerar 
 
-
+- Para cada una de las instancias se configuraron los archivos docker-compose.yml que se podran encontrar en este repositorio
