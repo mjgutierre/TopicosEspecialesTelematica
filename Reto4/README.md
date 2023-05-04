@@ -33,3 +33,15 @@ En esta sección se mostrará paso por paso el desarrollo del reto.
 
       sudo systemctl enable docker
       sudo systemctl start docker
+
+Aqui envidenciaremos la conexion del moodle en nuestra instancia y los contenedores de docker con la imagen de bitnami/moodle.
+
+![WhatsApp Image 2023-05-04 at 11 48 41](https://user-images.githubusercontent.com/68908889/236272480-f16e5a29-0a30-4c09-bc92-82ef1fc509f4.jpeg)
+
+![WhatsApp Image 2023-05-04 at 11 49 02](https://user-images.githubusercontent.com/68908889/236272558-1366f3ab-666b-4aef-9877-7481559d5405.jpeg)
+
+![WhatsApp Image 2023-05-04 at 11 49 21](https://user-images.githubusercontent.com/68908889/236272580-4ced66f4-c382-4a22-b4c4-139dedc17efd.jpeg)
+
+![WhatsApp Image 2023-05-04 at 11 49 21 (1)](https://user-images.githubusercontent.com/68908889/236272604-79a0b613-7268-459f-b5b0-df5ebe8d0ebe.jpeg)
+
+
