@@ -34,7 +34,7 @@ En esta sección se mostrará paso por paso el desarrollo del reto.
       sudo systemctl enable docker
       sudo systemctl start docker
 
-Aqui envidenciaremos la conexion del moodle en nuestra instancia y los contenedores de docker con la imagen de bitnami/moodle.
+Aqui envidenciaremos la conexion del moodle en nuestra instancia y los contenedores de docker con la imagen de bitnami/moodle.También para mas información, nos podemos dirigir al archivo [docker-compose.yml](https://github.com/mjgutierre/TopicosEspecialesTelematica/blob/master/Reto4/Docker-compose.yml) en donde encontraremos la configuración completa del contenedor.
 
 ![WhatsApp Image 2023-05-04 at 11 48 41](https://user-images.githubusercontent.com/68908889/236272480-f16e5a29-0a30-4c09-bc92-82ef1fc509f4.jpeg)
 
