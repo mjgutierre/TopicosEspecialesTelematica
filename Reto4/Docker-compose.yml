@@ -1,1 +1,31 @@
+version: '2'
+services:
+   moodle:
+    container_name: moodle
+    image: docker.io/bitnami/moodle:4.1
+    restart: always
+    ports:
+      - '8080:8080'
+      - '443:443'
+    environment:
+      - MOODLE_DATABASE_TYPE=mysqli
+      - MOODLE_DATABASE_HOST=moodledb2.ccwvtxdoy77j.us-east-1.rds.amazonaws.com
+      - MOODLE_DATABASE_PORT_NUMBER=3306
+      - MOODLE_DATABASE_USER=admin
+      - MOODLE_DATABASE_PASSWORD=12345678a
+      - MOODLE_DATABASE_NAME=moodledb2
+    volumes:
+      - 'moodle_data:/bitnami/moodle'
+      - 'moodledata_data:/bitnami/moodledata'
+      - /mnt/moodle:/var/www/html
+     # - efs_data:/mnt/efs
+volumes:
+  moodle_data:
 
+  moodledata_data:
+
+ # efs_data:
+   # driver_opts:
+      #type: nfs
+      #o: addr=fs-073e2adaddbb83c53.efs.us-east-1.amazonaws.com,nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport
+      #device: ":/"
