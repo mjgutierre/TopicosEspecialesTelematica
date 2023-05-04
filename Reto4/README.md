@@ -93,6 +93,6 @@ El ultimo comando permitirá verificar que el mount esté listo ya que aparecer�
 
 # Referencias 
 
-- https://aws.amazon.com/es/blogs/aws-spanish/acelerar-aprendizaje-remoto-en-minutos-usando-moodle-en-aws/
-- https://www.udemy.com/course/creacion-de-aula-virtual-moodle-41-en-amazon-web-service/
-- https://www.youtube.com/watch?v=-u72cCq2aqM
+- [Moodle en AWS](https://aws.amazon.com/es/blogs/aws-spanish/acelerar-aprendizaje-remoto-en-minutos-usando-moodle-en-aws/)
+- [Moodle](https://www.udemy.com/course/creacion-de-aula-virtual-moodle-41-en-amazon-web-service/)
+- [NFS en AWS](https://www.youtube.com/watch?v=-u72cCq2aqM)
