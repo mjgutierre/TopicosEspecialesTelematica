@@ -45,3 +45,7 @@ Aqui envidenciaremos la conexion del moodle en nuestra instancia y los contenedo
 ![WhatsApp Image 2023-05-04 at 11 49 21 (1)](https://user-images.githubusercontent.com/68908889/236272604-79a0b613-7268-459f-b5b0-df5ebe8d0ebe.jpeg)
 
 
+# Referencias 
+
+- https://aws.amazon.com/es/blogs/aws-spanish/acelerar-aprendizaje-remoto-en-minutos-usando-moodle-en-aws/
+- https://www.udemy.com/course/creacion-de-aula-virtual-moodle-41-en-amazon-web-service/
