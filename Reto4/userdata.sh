@@ -2,5 +2,5 @@
 git clone https://github.com/mjgutierre/TopicosEspecialesTelematica.git
 cd Reto4
 chmod +x install.sh
-./dockersetup.sh
+./install.sh
 sudo docker compose up
