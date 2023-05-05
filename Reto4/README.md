@@ -44,14 +44,14 @@ Aqui envidenciaremos la conexion del moodle en nuestra instancia y los contenedo
 
 ![WhatsApp Image 2023-05-04 at 11 49 02](https://user-images.githubusercontent.com/68908889/236272558-1366f3ab-666b-4aef-9877-7481559d5405.jpeg)
 
-![WhatsApp Image 2023-05-04 at 11 49 21](https://user-images.githubusercontent.com/68908889/236272580-4ced66f4-c382-4a22-b4c4-139dedc17efd.jpeg)
-
-![WhatsApp Image 2023-05-04 at 11 49 21 (1)](https://user-images.githubusercontent.com/68908889/236272604-79a0b613-7268-459f-b5b0-df5ebe8d0ebe.jpeg)
-
 Ahora se corre el siguiente comando para correr el archivo docker-compose y así aplicar los cambios :
       
       sudo docker-compose up
       
+![WhatsApp Image 2023-05-04 at 11 49 21 (1)](https://user-images.githubusercontent.com/68908889/236272604-79a0b613-7268-459f-b5b0-df5ebe8d0ebe.jpeg)
+      
+![WhatsApp Image 2023-05-04 at 11 49 21](https://user-images.githubusercontent.com/68908889/236272580-4ced66f4-c382-4a22-b4c4-139dedc17efd.jpeg)
+
 
 ## BD RDS
 
@@ -59,11 +59,15 @@ Para la creación de la base de datos, utilizamos un recurso de aws llamado RDS 
 
 ![image](https://user-images.githubusercontent.com/68908889/236353134-e1c698f2-dd65-4ce7-bd28-06c3d018882a.png)
 
-![image](https://user-images.githubusercontent.com/68908889/236353163-500c7de7-371e-4f55-8e7c-02d5bb59e57c.png)
+![WhatsApp Image 2023-05-04 at 19 55 27 (3)](https://user-images.githubusercontent.com/68908889/236358887-ace031e2-cfe1-47ff-8ce3-0c571e934622.jpeg)
 
 ![image](https://user-images.githubusercontent.com/68908889/236353227-8efb5044-16da-4808-8134-5c0d7adf4b28.png)
 
 ![image](https://user-images.githubusercontent.com/68908889/236353306-2954b44d-06b9-459b-97b7-138eb9dc48d4.png)
+
+![WhatsApp Image 2023-05-04 at 19 56 15](https://user-images.githubusercontent.com/68908889/236358803-0bf90814-ce60-4b66-90f7-390bb969e818.jpeg)
+
+
 
 
 ## NFS
@@ -77,12 +81,13 @@ De esta manera, en el grupo de seguridad de nuestra instancia se agrego la sigui
 
 ![image](https://user-images.githubusercontent.com/68908889/236340382-28ac5c49-4108-4eb3-b10d-4720c09c4741.png)
 
-Luego, se ejecutan los siguientes comandos para instalar el nfs-common en el cliente en la instancia Moodle y crear una carpeta llamada /mnt/moodle para posteriormente aplicar el mount y poder enlazar esa carpeta con el nfs-server y se hace el montaje a traves de DNS.
+Luego, se ejecutan los siguientes comandos para instalar el nfs-common en el cliente en la instancia Moodle y crear una carpeta llamada /mnt/efs para posteriormente aplicar el mount y poder enlazar esa carpeta con el nfs-server y se hace el montaje a traves de DNS.
 
        sudo apt-get -y update
        sudo apt-get -y install nfs-common
-       sudo mkdir -p /mnt/moodle
+       sudo mkdir -p /mnt/efs
        sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-073e2adaddbb83c53.efs.us-east-1.amazonaws.com: / /mnt/efs
+       df -h
     
 ![image](https://user-images.githubusercontent.com/68908889/236340628-06c8eea8-4d01-4c6e-9b15-26eed72e5bf9.png)
 
@@ -91,6 +96,13 @@ El ultimo comando permitirá verificar que el mount esté listo ya que aparecer�
 ![WhatsApp Image 2023-05-04 at 17 00 17](https://user-images.githubusercontent.com/68908889/236340397-d8b2094b-4e44-4242-bbff-3d81a68486bc.jpeg)
 
 ## Balanceador de Cargas
+
+Se utiliza el servicio de balanceador de cargas de aws con un [userdata.sh](https://github.com/mjgutierre/TopicosEspecialesTelematica/blob/master/Reto4/userdata.sh) que contiene un archivo [install.sh](https://github.com/mjgutierre/TopicosEspecialesTelematica/blob/master/Reto4/install.sh) con toda la configuración necesaria para el autoscaling group. 
+
+
+
+Tambien se crea una AMI con la instancia de moodle2 que luego estara asociada a una plantilla.
+
 
 
 # Referencias 
