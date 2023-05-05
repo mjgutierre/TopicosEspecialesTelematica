@@ -1,9 +1,11 @@
-# Info de la materia: st0263-2023-1 <Tópicos Especiales En Telemática>
+# **Reto 4**
+**Curso:** Tópicos Especiales en Telemática st0263-2023-1 <br>
+**Título:** <br>
+**Autores:** Paulina Ocampo Duque, mpocampod@eafit.edu.co - Estudiante de la Universidad EAFIT - [mpocampod](https://gist.github.com/mpocampod) <br>
+ Maria Jose Gutierrez Estrada -  mjgutierre@eafiT.edu.co - Estudiante de la Universidad EAFIT - [mjgutierre](https://gist.github.com/mjgutierre) <br>
 
-# Estudiante(s):
-## Paulina Ocampo Duque, mpocampod@eafit.edu.co
-## Maria Jose Gutierrez Estrada, mjgutierre@eafti.edu.co
 ### Profesor: Juan Carlos Montoya, jcmtya 
+***
 
 # 1. Breve descripción de la actividad
 
