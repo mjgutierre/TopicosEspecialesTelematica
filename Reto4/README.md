@@ -99,9 +99,19 @@ El ultimo comando permitirá verificar que el mount esté listo ya que aparecer�
 
 Se utiliza el servicio de balanceador de cargas de aws con un [userdata.sh](https://github.com/mjgutierre/TopicosEspecialesTelematica/blob/master/Reto4/userdata.sh) que contiene un archivo [install.sh](https://github.com/mjgutierre/TopicosEspecialesTelematica/blob/master/Reto4/install.sh) con toda la configuración necesaria para el autoscaling group. 
 
+![WhatsApp Image 2023-05-04 at 19 55 27 (5)](https://user-images.githubusercontent.com/68908889/236359476-bc9f0d17-bcf4-4716-a41f-4c53f189e547.jpeg)
 
+![WhatsApp Image 2023-05-04 at 19 55 27 (6)](https://user-images.githubusercontent.com/68908889/236359484-fc5d3ca7-bfbc-4ffc-9828-5dc3d603fe25.jpeg)
 
 Tambien se crea una AMI con la instancia de moodle2 que luego estara asociada a una plantilla.
+
+![WhatsApp Image 2023-05-04 at 19 56 15 (1)](https://user-images.githubusercontent.com/68908889/236359493-7cfd762b-121d-4f5e-99d8-5fddfc78307a.jpeg)
+
+Asi se ve cuando entramos al enlace del balanceador de cargas 
+
+![WhatsApp Image 2023-05-04 at 19 55 27 (7)](https://user-images.githubusercontent.com/68908889/236359665-82f4e9ed-52c9-40b6-b9d0-f859fdb01b0e.jpeg)
+
+![WhatsApp Image 2023-05-04 at 19 55 27 (8)](https://user-images.githubusercontent.com/68908889/236359671-4c957d0d-712f-4740-b4d6-f24f7999d9b0.jpeg)
 
 
 
