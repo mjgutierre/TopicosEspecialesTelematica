@@ -9,7 +9,17 @@
     sudo apt update
     sudo apt install python3-pip
     pip install -r requirements.txt
+      
+### Cambiar Puertos e IP
+
+    cd Reto1/Back/Gateway/env/src
+    sudo nano server1.py
     
+  Y cambiar la siguiente linea 
+ 
+    catalogCanalComuni = grpc.insecure_channel('localhost:50051')
+    orderCanalComuni = grpc.insecure_channel('localhost:50052')
+
 ### Iniciar el microservicio
 
     cd Reto1/Back/Gateway/env/src
