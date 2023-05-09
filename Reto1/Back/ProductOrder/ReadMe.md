@@ -13,8 +13,12 @@
     
 ### Cambiar la IP y Puerto del microservicio 
 
-    cd Reto1/Back/ProductOrder/Src
-    sudo nano .env
+    cd Reto1/Back/ProductOrder/src
+    sudo nano .server.py
+
+Y cambiar la siguiente linea
+
+    HOST = '[::]:50052'
 
 ### Iniciar el microservicio
     cd Reto1/Back/ProductOrder/Src
