@@ -4,6 +4,13 @@
 
     git clone https://github.com/mjgutierre/TopicosEspecialesTelematica.git
     
+### Instalar dependencias 
+
+    cd Reto1/Back/Gateway/env 
+    sudo apt update
+    sudo apt install python3-pip
+    pip install -r requirements.txt
+    
 ### Cambiar la IP y Puerto del microservicio 
 
     cd Reto1/Back/ProductCatalog/src
