@@ -50,7 +50,7 @@ console.info("Consumer service is started...");
         server.addService(catalogproto.ProductService.service, {
             AddProduct: AddProduct,
           });          
-        //server.bind("127.0.0.1:8080", grpc.ServerCredentials.createInsecure());
+        //server.bind("127.0.0.1:50051"", grpc.ServerCredentials.createInsecure());
         server.bind(process.env.REMOTE_HOST, grpc.ServerCredentials.createInsecure());
         server.start();
         console.log('Catalog service running on port  ${process.env.REMOTE_HOST}');
