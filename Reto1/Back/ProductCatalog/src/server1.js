@@ -5,6 +5,7 @@ import protoLoader from '@grpc/proto-loader';
 dotenv.config()
 
 var PROTO_PATH = process.env.PROTO_PATH;
+var REMOTE_HOST = process.env.REMOTE_HOST;
 
 const packageDefinition = protoLoader.loadSync(
     PROTO_PATH,
@@ -49,9 +50,10 @@ console.info("Consumer service is started...");
         server.addService(catalogproto.ProductService.service, {
             AddProduct: AddProduct,
           });          
-        server.bind("127.0.0.1:8080", grpc.ServerCredentials.createInsecure());
+        //server.bind("127.0.0.1:8080", grpc.ServerCredentials.createInsecure());
+        server.bind(process.env.REMOTE_HOST, grpc.ServerCredentials.createInsecure());
         server.start();
-        console.log('Catalog service running on port 8080');
+        console.log('Catalog service running on port  ${process.env.REMOTE_HOST}');
       }
       
       main();
