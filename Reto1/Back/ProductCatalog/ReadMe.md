@@ -13,7 +13,7 @@
     
 ### Cambiar la IP y Puerto del microservicio 
 
-    cd Reto1/Back/ProductCatalog/src
+    cd TopicosEspecialesTelematica/Reto1/Back/ProductCatalog/src
     sudo nano .env
 
 ### Iniciar el microservicio
