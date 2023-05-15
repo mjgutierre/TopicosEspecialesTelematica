@@ -6,7 +6,7 @@
     
 ### Instalar dependencias 
 
-    cd Reto1/Back/Gateway/env 
+    cd TopicosEspecialesTelematica/Reto1/Back/Gateway/env 
     sudo apt update
     sudo apt install python3-pip
     pip install -r requirements.txt
@@ -17,6 +17,6 @@
     sudo nano .env
 
 ### Iniciar el microservicio
-    cd Reto1/Back/ProductCatalog/src    
+    cd TopicosEspecialesTelematica/Reto1/Back/ProductCatalog/src    
     npm start
     
