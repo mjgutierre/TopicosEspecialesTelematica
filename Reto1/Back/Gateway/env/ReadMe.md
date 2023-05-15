@@ -5,14 +5,14 @@
     git clone https://github.com/mjgutierre/TopicosEspecialesTelematica.git
     
 ### Instalar las dependencias para el microservicio
-    cd Reto1/Back/Gateway/env 
+    cd TopicosEspecialesTelematica/Reto1/Back/Gateway/env 
     sudo apt update
     sudo apt install python3-pip
     pip install -r requirements.txt
       
 ### Cambiar Puertos e IP
 
-    cd Reto1/Back/Gateway/env/src
+    cd TopicosEspecialesTelematica/Reto1/Back/Gateway/env/src
     sudo nano server1.py
     
   Y cambiar la siguiente linea 
@@ -22,5 +22,5 @@
 
 ### Iniciar el microservicio
 
-    cd Reto1/Back/Gateway/env/src
-    py server1.py
+    cd TopicosEspecialesTelematica/Reto1/Back/Gateway/env/src
+    pyton3 server1.py
