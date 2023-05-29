@@ -31,13 +31,14 @@ Después con las credenciales de IAM de nuestra sesion en AWS ejecutaremos los s
   <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/f47c4372-49ae-4c59-af16-21e8f678caf7" alt="Verificacion y configuracion AWSCLI" width="" height="" style="display: block; margin: auto;">
 </p>
 
-### Creación de Bucket S3 en consolo AWS CLI
+### Creación de Bucket S3 en consola AWS CLI
 
 Luego de configurar las credenciales, ejecutaremos el siguiente comando para crear el bucket s3://mjgutierre-reto5-emr
 
       aws s3 mb s3://mjgutierre-reto5-emr
       
-      
+Para verificar la creacion se ejecutará el comando
+
       aws s3 ls
 
 
