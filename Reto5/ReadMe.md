@@ -55,7 +55,6 @@ Podemos observar que en nuestra cuenta ya se encuentra el s3 bucket.
 
 ### Creación de Cluster en consola AWS CLI
 
-aws emr create-cluster --name "emr-MyClusterEMR" \--use-default-roles --release-label emr-5.26.0 --applications Name=Hue Name=Ozzie Name=Spark Name=Hadoop Name=Sqoop Name=Hive --service-role EMR_DefaultRole --ec2-attributes KeyName= emr-key, --InstanceProfile= EMR_EC2_DefaultRole \ --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m4.large InstanceGroupType=CORE,InstanceCount=2,InstanceType=m4.large, InstanceGroupType=TASK,InstanceCount=1,InstanceType=m4.large 
     
      aws emr create-cluster --name "emr-MyClusterEMR" \
         --release-label emr-5.26.0 \
@@ -66,7 +65,44 @@ aws emr create-cluster --name "emr-MyClusterEMR" \--use-default-roles --release-
         --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m4.large InstanceGroupType=CORE,InstanceCount=2,InstanceType=m4.large 
     InstanceGroupType=TASK,InstanceCount=1,InstanceType=m4.large \
         --no-auto-terminate
+        
 
+aws emr create-cluster \
+    --release-label emr-5.26.0 \
+    --service-role EMR_DefaultRole \
+    --ec2-attributes KeyName=emr-key,InstanceProfile=EMR_EC2_DefaultRole \
+    --name emr-lab-reto-cluster \
+    --applications Name=Hue Name=Spark Name=Hadoop Name=Sqoop Name=Hive \
+    --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m4.large InstanceGroupType=CORE,InstanceCount=2,InstanceType=m4.large InstanceGroupType=TASK,InstanceCount=1,InstanceType=m4.large \
+    --no-auto-terminate
+
+aws emr create-cluster --name "emr-MyClusterEMR" --release-label emr-5.26.0 --applications Name=Hue Name=Spark Name=Hadoop Name=Sqoop Name=Hive Name=Oozie --ec2-attributes KeyName=emr-key1.pem --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m4.large InstanceGroupType=CORE,InstanceCount=1,InstanceType=m4.large InstanceGroupType=TASK,InstanceCount=1,InstanceType=m4.large --service-role EMR_DefaultRole --instance-profile EMR_EC2_DefaultRole
+
+
+
+
+
+
+
+
+Name: emr-MyClusterEMR
+ Amazon EMR release: emr-5.26.0
+o Applications EMR:
+§ Hue 4.4.0
+§ Spark 2.4.3
+§ Hadoop 2.8.5
+§ Sqoop 1.4.7
+§ Hive 2.3.5
+§ Ozzie 5.1.0
+
+o Instance groups.
+§ Primary. Seleccione m4.large.
+§ Core. Seleccione m4.large
+Task. Seleccione m4.large
+
+Amazon EC2 key pair emr-key.pem.
+§ Service Role: Seleccione EMR_DefaultRole.
+§ Instance profile: Seleccione EMR_EC2_DefaultRole
 
 # Referencias
 - [Uso de AWS CLI](https://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-chap-using.html)
