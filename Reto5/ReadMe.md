@@ -55,28 +55,9 @@ Podemos observar que en nuestra cuenta ya se encuentra el s3 bucket.
 
 ### Creación de Cluster en consola AWS CLI
 
-    
-     aws emr create-cluster --name "emr-MyClusterEMR" \
-        --release-label emr-5.26.0 \
-        --applications Name=Hue Name=Ozzie Name=Spark Name=Hadoop Name=Sqoop Name=Hive \
-        --service-role EMR_DefaultRole \
-        --InstanceProfile EMR_EC2_DefaultRole \
-        --ec2-attributes KeyName= emr-key \
-        --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m4.large InstanceGroupType=CORE,InstanceCount=2,InstanceType=m4.large 
-    InstanceGroupType=TASK,InstanceCount=1,InstanceType=m4.large \
-        --no-auto-terminate
-        
 
-aws emr create-cluster \
-    --release-label emr-5.26.0 \
-    --service-role EMR_DefaultRole \
-    --ec2-attributes KeyName=emr-key,InstanceProfile=EMR_EC2_DefaultRole \
-    --name emr-lab-reto-cluster \
-    --applications Name=Hue Name=Spark Name=Hadoop Name=Sqoop Name=Hive \
-    --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m4.large InstanceGroupType=CORE,InstanceCount=2,InstanceType=m4.large InstanceGroupType=TASK,InstanceCount=1,InstanceType=m4.large \
-    --no-auto-terminate
+aws emr create-cluster \ --name emr-MyClusterEMR \ --release-label emr-5.26.0 \ --service-role EMR_DefaultRole \ --ec2-attributes KeyName=emr-key1,InstanceProfile=EMR_EC2_DefaultRole \ --applications Name=Hue Name=Ozzie Name=Spark Name=Hadoop Name=Sqoop Name=Hive \ --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m4.large InstanceGroupType=CORE,InstanceCount=2,InstanceType=m4.large InstanceGroupType=TASK,InstanceCount=1,InstanceType=m4.large \ --no-auto-terminate
 
-aws emr create-cluster --name "emr-MyClusterEMR" --release-label emr-5.26.0 --applications Name=Hue Name=Spark Name=Hadoop Name=Sqoop Name=Hive Name=Oozie --ec2-attributes KeyName=emr-key1.pem --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m4.large InstanceGroupType=CORE,InstanceCount=1,InstanceType=m4.large InstanceGroupType=TASK,InstanceCount=1,InstanceType=m4.large --service-role EMR_DefaultRole --instance-profile EMR_EC2_DefaultRole
 
 
 
