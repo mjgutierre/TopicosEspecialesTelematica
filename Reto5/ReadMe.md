@@ -53,11 +53,20 @@ Podemos observar que en nuestra cuenta ya se encuentra el s3 bucket.
   <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/ada0f021-e319-4ecb-a81b-20dc3e039cc4" alt="verificacion en aws de creacion s3" width="" height="" style="display: block; margin: auto;">
 </p>
 
-###
-
-
+### Creación de Cluster en consola AWS CLI
+    
+     aws emr create-cluster --name "emr-MyClusterEMR" \
+        --release-label emr-5.26.0 \
+        --applications Name=Hue Name=Ozzie Name=Spark Name=Hadoop Name=Sqoop Name=Hive \
+        --service-role EMR_DefaultRole \
+        --InstanceProfile EMR_EC2_DefaultRole \
+        --ec2-attributes KeyName= emr-key \
+        --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m4.large InstanceGroupType=CORE,InstanceCount=2,InstanceType=m4.large 
+    InstanceGroupType=TASK,InstanceCount=1,InstanceType=m4.large \
+        --no-auto-terminate
 
 
 # Referencias
 - [Uso de AWS CLI](https://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-chap-using.html)
+- [Amazon S3](https://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-services-s3.html)
 - [Amazon EMR](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps-create-cluster.html)
