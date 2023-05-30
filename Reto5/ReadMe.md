@@ -54,6 +54,8 @@ Podemos observar que en nuestra cuenta ya se encuentra el s3 bucket.
 </p>
 
 ### Creación de Cluster en consola AWS CLI
+
+aws emr create-cluster --name "emr-MyClusterEMR" \--use-default-roles --release-label emr-5.26.0 --applications Name=Hue Name=Ozzie Name=Spark Name=Hadoop Name=Sqoop Name=Hive --service-role EMR_DefaultRole --ec2-attributes KeyName= emr-key, --InstanceProfile= EMR_EC2_DefaultRole \ --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m4.large InstanceGroupType=CORE,InstanceCount=2,InstanceType=m4.large, InstanceGroupType=TASK,InstanceCount=1,InstanceType=m4.large 
     
      aws emr create-cluster --name "emr-MyClusterEMR" \
         --release-label emr-5.26.0 \
