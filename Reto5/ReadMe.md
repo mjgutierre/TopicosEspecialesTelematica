@@ -179,3 +179,4 @@ El comando sig ejecuta un programa Python llamado wordcount-mr.py en un entorno 
 - [Uso de AWS CLI](https://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-chap-using.html)
 - [Amazon S3](https://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-services-s3.html)
 - [Amazon EMR](https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps-create-cluster.html)
+- [mrjob on EMR](https://mrjob.readthedocs.io/en/latest/guides/runners.html#configuration)
