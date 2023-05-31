@@ -264,7 +264,52 @@ REVISAR LOGICA DE CODIGO
 	
   - EMR	
 	
+3. Sistema de evaluación de películas: Se tiene un conjunto de datos en el cual se evalúan las películas con un rating.
+
+  Realizar un programa en Map/Reduce, con hadoop en Python, que permita calcular:
+
+
+Número de usuarios que ven una misma película y el rating promedio
+Día en que peor evaluación en promedio han dado los usuarios
+Día en que mejor evaluación han dado los usuarios
+La mejor y peor película evaluada por genero
 	
+	
+ **a. Número de películas vista por un usuario, valor promedio de calificación**
+	
+  - Local	
+	
+	       python .py  datapeliculas.txt
+		
+<p align="center">
+  <img src="" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+  - EMR		
+
+ **b. Día en que más películas se han visto**
+	
+  - Local	
+	
+	       python .py  datapeliculas.txt
+		
+<p align="center">
+  <img src="" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+  - EMR	
+	
+ **c. Día en que menos películas se han visto**
+	
+  - Local	
+	
+	       python .py  datapeliculas.txt
+		
+<p align="center">
+  <img src="" alt="RESULTADOS EMPRESAS LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+  - EMR	
   
 # Referencias
 - [Uso de AWS CLI](https://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-chap-using.html)
