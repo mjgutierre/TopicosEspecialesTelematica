@@ -246,10 +246,10 @@ REVISAR LOGICA DE CODIGO
 	
   - Local	
 	
-	       python c_dianegro_mr dataempresas.txt
+	       python c_dianegro_mr.py dataempresas.txt
 		
 <p align="center">
-  <img src="" alt="RESULTADOS EMPRESAS LOCAL" width="" height="" style="display: block; margin: auto;">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/f9cd3be2-df28-4eed-8900-716960663de8" alt="RESULTADOS EMPRESAS LOCAL" width="" height="" style="display: block; margin: auto;">
 </p>
 	
   - EMR	
