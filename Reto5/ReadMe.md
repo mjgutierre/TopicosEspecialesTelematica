@@ -180,7 +180,7 @@ El comando sig ejecuta un programa Python llamado wordcount-mr.py en un entorno 
 	
   - Local
 	
-	    python a_avrg_salary_se_mr.py dataempleados.txt	
+	    python a_avrg_salary_se_mr.py  dataempleados.txt	
 	
 <p align="center">
   <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/c6fc80cd-7c56-4fea-93b1-0ba1e5364925" alt="RESULTADOS DIAN LOCAL" width="" height="" style="display: block; margin: auto;">
@@ -192,7 +192,7 @@ El comando sig ejecuta un programa Python llamado wordcount-mr.py en un entorno 
 	
   - Local
 	
-	     python b_avrg_salary_emp_mr.py dataempleados.txt
+	     python b_avrg_salary_emp_mr.py  dataempleados.txt
 	
 <p align="center">
   <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/1219053f-fddb-47ee-a3d2-75c4b1de4097" alt="RESULTADOS DIAN LOCAL" width="" height="" style="display: block; margin: auto;">
@@ -204,7 +204,7 @@ El comando sig ejecuta un programa Python llamado wordcount-mr.py en un entorno 
 	
   - Local
 	
-	      python c_se_emp_mr.py dataempleados.txt
+	      python c_se_emp_mr.py  dataempleados.txt
 	
 <p align="center">
   <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/d9af69cb-ed77-48f3-ae33-9a18b06d4944" alt="RESULTADOS DIAN LOCAL" width="" height="" style="display: block; margin: auto;">
@@ -220,7 +220,7 @@ El comando sig ejecuta un programa Python llamado wordcount-mr.py en un entorno 
 	
   - Local	
 	
-	       python a_minmax_mr.py dataempresas.txt
+	       python a_minmax_mr.py  dataempresas.txt
 	
 REVISAR LOGICA DE CODIGO 
 	
@@ -234,10 +234,10 @@ REVISAR LOGICA DE CODIGO
 	
   - Local	
 	
-	       python b_estable_mr dataempresas.txt
+	       python b_estable_mr.py  dataempresas.txt
 		
 <p align="center">
-  <img src="" alt="RESULTADOS EMPRESAS LOCAL" width="" height="" style="display: block; margin: auto;">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/d74b11f4-cda0-4c77-bfb8-0e9d83dd54c8" alt="RESULTADOS EMPRESAS LOCAL" width="" height="" style="display: block; margin: auto;">
 </p>
 	
   - EMR	
