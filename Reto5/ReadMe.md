@@ -49,7 +49,7 @@ Para verificar la creacion se ejecutará el comando
 Aqui se puede observar que en un primer momento ejecutamos el comando para ver que s3 bucket estaban en nuestra cuenta y luego procedemos a crear uno nuevo y verificar si fue exitoso este proceso.
 
 <p align="center">
-  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/bac9522c-ad76-49ac-9e02-262050f47345" alt="creacion s3" width="" height="" style="display: block; margin: auto;">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/53a8ebd4-e06b-4195-a536-cf4e30c49102" alt="creacion s3" width="" height="" style="display: block; margin: auto;">
 </p>
 
 Podemos observar que en nuestra cuenta ya se encuentra el s3 bucket.
@@ -62,7 +62,7 @@ Podemos observar que en nuestra cuenta ya se encuentra el s3 bucket.
 
 Con los siguientes comandos crearemos un cluster a traves de la consola de AWS CLI
     
-    aws emr create-cluster \ --name emr-MyClusterEMR \ --release-label emr-5.26.0 \ --service-role EMR_DefaultRole \ --ec2-attributes KeyName=emr-key1,InstanceProfile=EMR_EC2_DefaultRole \ --applications Name=Hue Name=Ozzie Name=Spark Name=Hadoop Name=Sqoop Name=Hive \ --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m4.large InstanceGroupType=CORE,InstanceCount=2,InstanceType=m4.large InstanceGroupType=TASK,InstanceCount=1,InstanceType=m4.large \ --no-auto-terminate
+    aws emr create-cluster --name emr-MyClusterEMR --release-label emr-5.26.0 --service-role EMR_DefaultRole --ec2-attributes KeyName=emr-key1,InstanceProfile=EMR_EC2_DefaultRole  --applications Name=Hue Name=Spark Name=Hadoop Name=Sqoop Name=Hive --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m4.large InstanceGroupType=CORE,InstanceCount=2,InstanceType=m4.large InstanceGroupType=TASK,InstanceCount=1,InstanceType=m4.large --no-auto-terminate
     
 **Los valores configurados fueron:**
 
@@ -91,7 +91,7 @@ Y este es el resultado arrojado
 - Consola 
 
 <p align="center">
-  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/a85eee51-1e73-4346-9c4b-61674f4576e3" alt="creacion emr a traves de aws cli" width="" height="" style="display: block; margin: auto;">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/3ec3a6e1-7f75-4930-bbbe-0c6093a5a5ff" alt="creacion emr a traves de aws cli" width="" height="" style="display: block; margin: auto;">
 </p>
 
 - EMR AWS 
@@ -133,15 +133,18 @@ Luego clonaremos el repositorio
     
 Una vez dentro se ejecutaron los siguientes comandos
 
-     cd st0263-2023-1
-     cd "Laboratorio N6-MapReduce"
-     cd wordcount
+     cd st0263-2023-1/"Laboratorio N6-MapReduce"/wordcount
      python wordcount-local.py /datasets/gutenberg-small/*.txt > salida-serial.txt
      more salida-serial.txt
+     sudo nano salida-serial.txt
      
  Este sera nuestro resultado
 
 ![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/b0e2f7f3-b7e9-4f56-b471-746eb6842d3a)
+
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/f895b370-7164-49b4-89f1-40ed0bb5d06c" alt="ingreso a emr por ssh" width="" height="" style="display: block; margin: auto;">
+</p>
 
 Como parte del sistema, se instalará mrjob así:
 
@@ -152,7 +155,13 @@ Como parte del sistema, se instalará mrjob así:
   Probamos mrjob con python local:
      
      cd wordcount
-	   python wordcount-mr.py ./datasets/gutenberg-small/*.txt
+     python wordcount-mr.py ../../datasets/gutenberg-small/*.txt
+     
+  Y este es nuestro resultado 
+  
+![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/fdd67602-9d14-4bfb-961c-fdb967ac3553)
+![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/f2ba79a8-da91-45d9-bfbe-04a29f14c030)
+
 
 Se creo un archivo llamado mrjob.conf con las siguientes configuraciones
 
@@ -167,8 +176,9 @@ Se creo un archivo llamado mrjob.conf con las siguientes configuraciones
 
 El comando sig ejecuta un programa Python llamado wordcount-mr.py en un entorno Hadoop utilizando Hadoop Streaming. El programa cuenta las palabras en varios archivos de texto ubicados en el directorio hdfs:///datasets/gutenberg-small/ y guarda los resultados en el directorio hdfs:///user/<login>/result3.
 
-      python wordcount-mr.py hdfs:///datasets/gutenberg-small/*.txt -r hadoop --output-dir hdfs:///user/ec2-user/result3 --hadoop-streaming-jar $HADOOP_STREAMING_HOME/hadoop-streaming.jar
+	python your_mr_job_sub_class.py -r emr < input > output
 
+	python wordcount-mr.py -r hadoop hdfs:///datasets/gutenberg-small/*.txt --output-dir hdfs:///user/ec2-user/result3 --hadoop-streaming-jar $HADOOP_STREAMING_HOME/hadoop-streaming.jar
   
 ## Reto de Programación en Map/Reduce
 
