@@ -204,7 +204,7 @@ El comando sig ejecuta un programa Python llamado wordcount-mr.py en un entorno 
 	
   - Local
 	
-	     python c_se_emp_mr.py dataempleados.txt
+	      python c_se_emp_mr.py dataempleados.txt
 	
 <p align="center">
   <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/d9af69cb-ed77-48f3-ae33-9a18b06d4944" alt="RESULTADOS DIAN LOCAL" width="" height="" style="display: block; margin: auto;">
@@ -212,7 +212,49 @@ El comando sig ejecuta un programa Python llamado wordcount-mr.py en un entorno 
 
    - EMR
 	
-  
+2. Se tiene un conjunto de acciones de la bolsa, en la cual se reporta a diario el valor promedio por acción, la estructura de los datos es (archivo: dataempresas.csv):
+
+  Programa en Map/Reduce, con hadoop en Python, que permita calcular:
+
+**a. Por acción, dia-menor-valor, día-mayor-valor**
+	
+  - Local	
+	
+	       python a_minmax_mr.py dataempresas.txt
+	
+REVISAR LOGICA DE CODIGO 
+	
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/b711097a-19c5-47ef-84b3-b83a812c5174" alt="RESULTADOS EMPRESAS LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+  - EMR		
+	
+**b. Listado de acciones que siempre han subido o se mantienen estables.**
+	
+  - Local	
+	
+	       python b_estable_mr dataempresas.txt
+		
+<p align="center">
+  <img src="" alt="RESULTADOS EMPRESAS LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+  - EMR	
+
+**c. DIA NEGRO: Día en el que la mayor cantidad de acciones tienen el menor valor de acción (DESPLOME), suponiendo una inflación independiente del tiempo.**
+	
+  - Local	
+	
+	       python c_dianegro_mr dataempresas.txt
+		
+<p align="center">
+  <img src="" alt="RESULTADOS EMPRESAS LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+  - EMR	
+	
+	
   
 # Referencias
 - [Uso de AWS CLI](https://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-chap-using.html)
