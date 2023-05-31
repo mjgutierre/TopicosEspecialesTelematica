@@ -172,7 +172,46 @@ El comando sig ejecuta un programa Python llamado wordcount-mr.py en un entorno 
   
 ## Reto de Programación en Map/Reduce
 
-  
+1. Se tiene un conjunto de datos, que representan el salario anual de los empleados formales en Colombia por sector económico, según la DIAN. 
+
+  Programa en Map/Reduce, con hadoop en Python, que permita calcular:
+
+  **a. El salario promedio por Sector Económico (SE)**
+	
+  - Local
+	
+	    python a_avrg_salary_se_mr.py dataempleados.txt	
+	
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/c6fc80cd-7c56-4fea-93b1-0ba1e5364925" alt="RESULTADOS DIAN LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+   - EMR
+
+  **b. El salario promedio por Empleado**
+	
+  - Local
+	
+	     python b_avrg_salary_emp_mr.py dataempleados.txt
+	
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/1219053f-fddb-47ee-a3d2-75c4b1de4097" alt="RESULTADOS DIAN LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+
+   - EMR
+
+  **c. Número de SE por Empleado que ha tenido a lo largo de la estadística**
+	
+  - Local
+	
+	     python c_se_emp_mr.py dataempleados.txt
+	
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/d9af69cb-ed77-48f3-ae33-9a18b06d4944" alt="RESULTADOS DIAN LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+
+   - EMR
+	
   
   
 # Referencias
