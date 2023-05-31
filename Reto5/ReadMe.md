@@ -306,7 +306,7 @@ La mejor y peor película evaluada por genero
 	       python .py  datapeliculas.txt
 		
 <p align="center">
-  <img src="" alt="RESULTADOS EMPRESAS LOCAL" width="" height="" style="display: block; margin: auto;">
+  <img src="" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
 </p>
 	
   - EMR	
