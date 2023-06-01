@@ -91,7 +91,7 @@ Y este es el resultado arrojado
 - Consola 
 
 <p align="center">
-  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/3ec3a6e1-7f75-4930-bbbe-0c6093a5a5ff" alt="creacion emr a traves de aws cli" width="" height="" style="display: block; margin: auto;">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/ab61c925-9e38-43cd-8bc1-90c499c12ed4" alt="creacion emr a traves de aws cli" width="" height="" style="display: block; margin: auto;">
 </p>
 
 - EMR AWS 
@@ -159,7 +159,157 @@ Como parte del sistema, se instalará mrjob así:
      
   Y este es nuestro resultado 
   
+![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/fdd67602-9d14-4bfb-961c-fdb967ac3553)
+![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/f2ba79a8-da91-45d9-bfbe-04a29f14c030)
 
+
+Se creo un archivo llamado mrjob.conf con las siguientes configuraciones
+
+    runners:
+      emr:
+        aws_access_key_id: ASIATQCL7MV5UJ4NY3SX
+        aws_secret_access_key: iVUauQd6yTU6JZAb/4f9bli2P+Bw1Zc9kriNx/an
+        ec2_key_pair: emr-key1
+        ec2_key_pair_file: ~/.ssh/emr-key1.pem
+        region: us-east-1
+        emr_job_flow_id: j-DAAR86LTN744
+
+El comando sig ejecuta un programa Python llamado wordcount-mr.py en un entorno Hadoop utilizando Hadoop Streaming. El programa cuenta las palabras en varios archivos de texto ubicados en el directorio hdfs:///datasets/gutenberg-small/ y guarda los resultados en el directorio hdfs:///user/<login>/result3.
+
+	python your_mr_job_sub_class.py -r emr < input > output
+
+	python wordcount-mr.py -r hadoop hdfs:///datasets/gutenberg-small/*.txt --output-dir hdfs:///user/ec2-user/result3 --hadoop-streaming-jar $HADOOP_STREAMING_HOME/hadoop-streaming.jar
+  
+## Reto de Programación en Map/Reduce
+
+1. Se tiene un conjunto de datos, que representan el salario anual de los empleados formales en Colombia por sector económico, según la DIAN. 
+
+  Programa en Map/Reduce, con hadoop en Python, que permita calcular:
+
+  **a. El salario promedio por Sector Económico (SE)**
+	
+  - Local
+	
+	    python a_avrg_salary_se_mr.py  dataempleados.txt	
+	
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/c6fc80cd-7c56-4fea-93b1-0ba1e5364925" alt="RESULTADOS DIAN LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+   - EMR
+
+  **b. El salario promedio por Empleado**
+	
+  - Local
+	
+	     python b_avrg_salary_emp_mr.py  dataempleados.txt
+	
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/1219053f-fddb-47ee-a3d2-75c4b1de4097" alt="RESULTADOS DIAN LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+
+   - EMR
+
+  **c. Número de SE por Empleado que ha tenido a lo largo de la estadística**
+	
+  - Local
+	
+	      python c_se_emp_mr.py  dataempleados.txt
+	
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/d9af69cb-ed77-48f3-ae33-9a18b06d4944" alt="RESULTADOS DIAN LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+
+   - EMR
+	
+2. Se tiene un conjunto de acciones de la bolsa, en la cual se reporta a diario el valor promedio por acción, la estructura de los datos es (archivo: dataempresas.csv):
+
+  Programa en Map/Reduce, con hadoop en Python, que permita calcular:
+
+**a. Por acción, dia-menor-valor, día-mayor-valor**
+	
+  - Local	
+	
+	       python a_minmax_mr.py  dataempresas.txt
+	
+REVISAR LOGICA DE CODIGO 
+	
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/b711097a-19c5-47ef-84b3-b83a812c5174" alt="RESULTADOS EMPRESAS LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+  - EMR		
+	
+**b. Listado de acciones que siempre han subido o se mantienen estables.**
+	
+  - Local	
+	
+	       python b_estable_mr.py  dataempresas.txt
+		
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/d74b11f4-cda0-4c77-bfb8-0e9d83dd54c8" alt="RESULTADOS EMPRESAS LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+  - EMR	
+
+**c. DIA NEGRO: Día en el que la mayor cantidad de acciones tienen el menor valor de acción (DESPLOME), suponiendo una inflación independiente del tiempo.**
+	
+  - Local	
+	
+	       python c_dianegro_mr.py dataempresas.txt
+		
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/f9cd3be2-df28-4eed-8900-716960663de8" alt="RESULTADOS EMPRESAS LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+  - EMR	
+	
+3. Sistema de evaluación de películas: Se tiene un conjunto de datos en el cual se evalúan las películas con un rating.
+
+  Realizar un programa en Map/Reduce, con hadoop en Python, que permita calcular:
+
+
+Número de usuarios que ven una misma película y el rating promedio
+Día en que peor evaluación en promedio han dado los usuarios
+Día en que mejor evaluación han dado los usuarios
+La mejor y peor película evaluada por genero
+	
+	
+ **a. Número de películas vista por un usuario, valor promedio de calificación**
+	
+  - Local	
+	
+	       python .py  datapeliculas.txt
+		
+<p align="center">
+  <img src="" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+  - EMR		
+
+ **b. Día en que más películas se han visto**
+	
+  - Local	
+	
+	       python .py  datapeliculas.txt
+		
+<p align="center">
+  <img src="" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+  - EMR	
+	
+ **c. Día en que menos películas se han visto**
+	
+  - Local	
+	
+	       python .py  datapeliculas.txt
+		
+<p align="center">
+  <img src="" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+  - EMR	
   
 # Referencias
 - [Uso de AWS CLI](https://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-chap-using.html)
