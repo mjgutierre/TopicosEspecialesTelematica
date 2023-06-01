@@ -279,10 +279,10 @@ La mejor y peor película evaluada por genero
 	
   - Local	
 	
-	       python .py  datapeliculas.txt
+	       python a.py datapeliculas.tx
 		
 <p align="center">
-  <img src="" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/3b00a6c6-9efd-4b01-a696-3e3583a3cf8a" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
 </p>
 	
   - EMR		
@@ -291,10 +291,10 @@ La mejor y peor película evaluada por genero
 	
   - Local	
 	
-	       python .py  datapeliculas.txt
+	      python b_masPelisFecha_mr.py datapeliculas.txt
 		
 <p align="center">
-  <img src="" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/a7120c91-8b70-4b4f-a534-b4bb6df3ffe1" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
 </p>
 	
   - EMR	
