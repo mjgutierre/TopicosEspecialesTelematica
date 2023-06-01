@@ -290,6 +290,8 @@ Output en s3
 <p align="center">
   <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/558e3932-095d-4c6f-9b8a-0864f1304d0c" alt="RESULTADOS DIAN S3 CONSOLA" width="" height="" style="display: block; margin: auto;">
 </p>
+
+Aqui tenemos la verificacion de las pruebas para los 3 codigos
 	
 <p align="center">
   <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/6b431dd3-aa76-4666-a270-8645d828efb3" alt="RESULTADOS DIAN S3" width="" height="" style="display: block; margin: auto;">
