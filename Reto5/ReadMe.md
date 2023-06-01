@@ -173,6 +173,11 @@ Tendremos un resultado como este
 
 ![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/97984e4b-fc5a-432c-b84f-19f0104c48eb)
 
+para verificar el resultado ejecutamos el comando
+
+       hdfs dfs -cat /user/admin/result3/*
+
+
 
 Se clona el repositorio donde estan los codigos 
 
