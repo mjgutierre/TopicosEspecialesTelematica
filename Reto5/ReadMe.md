@@ -134,7 +134,7 @@ Luego clonaremos el repositorio
 Una vez dentro se ejecutaron los siguientes comandos
 
      cd st0263-2023-1/"Laboratorio N6-MapReduce"/wordcount
-     python wordcount-local.py /datasets/gutenberg-small/*.txt > salida-serial.txt
+     python wordcount-local.py ../../datasets/gutenberg-small/*.txt > salida-serial.txt
      more salida-serial.txt
      sudo nano salida-serial.txt
      
