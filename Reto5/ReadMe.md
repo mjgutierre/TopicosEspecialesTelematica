@@ -178,8 +178,7 @@ para verificar el resultado ejecutamos el comando
        hdfs dfs -cat /user/admin/result3/*
 
 
-
-Se clona el repositorio donde estan los codigos 
+Luego se clona el repositorio donde estan los codigos 
 
       git clone https://github.com/mjgutierre/TopicosEspecialesTelematica.git
       cd TopicosEspecialesTelematica/Reto5/MapReduce
