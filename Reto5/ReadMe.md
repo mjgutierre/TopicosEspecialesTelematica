@@ -177,6 +177,16 @@ El comando sig ejecuta un programa Python llamado wordcount-mr.py en un entorno 
 	python your_mr_job_sub_class.py -r emr < input > output
 
 	python wordcount-mr.py -r hadoop hdfs:///datasets/gutenberg-small/*.txt --output-dir hdfs:///user/ec2-user/result3 --hadoop-streaming-jar $HADOOP_STREAMING_HOME/hadoop-streaming.jar
+	
+	
+	
+	
+	
+	
+	
+	
+	![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/97984e4b-fc5a-432c-b84f-19f0104c48eb)
+
   
 ## Reto de Programación en Map/Reduce
 
