@@ -160,7 +160,7 @@ Como parte del sistema, se instalará mrjob así:
 
 Copiamos el dataset en nuestro emr
 
-    hdfs dfs -mkdir /user/admin
+    hdfs dfs -mkdir /user/admin/
 	  hdfs dfs -copyFromLocal /home/hadoop/st0263-2023-1/datasets/ /user/admin/
 
 Y luego ejecuramos con 
