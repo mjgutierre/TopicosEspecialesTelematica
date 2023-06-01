@@ -183,17 +183,6 @@ Se clona el repositorio donde estan los codigos
       git clone https://github.com/mjgutierre/TopicosEspecialesTelematica.git
       cd TopicosEspecialesTelematica/Reto5/MapReduce
 
-Luego copiamos los datos a un directorio 
-
-     hdfs dfs -put dataempleados.txt hdfs:///user/admin/dataempleados.txt
-     
-Y ejecutamos 
-
-      python a_avrg_salary_se_mr.py hdfs:///user/admin/dataempleados.txt -r hadoop --output-dir hdfs:///user/admin/punto1a
-
-Para obtener el siguiente resultado
-
-
 Se creo un archivo llamado mrjob.conf con las siguientes configuraciones
 
     runners:
@@ -210,6 +199,8 @@ Se creo un archivo llamado mrjob.conf con las siguientes configuraciones
   
 ## Reto de Programación en Map/Reduce (Reto3)
 
+Acá podremos encontrar las [pruebas generadas por aws](https://github.com/mjgutierre/TopicosEspecialesTelematica/tree/master/Reto5/Pruebasaws) y ejecutadas desde el cluster como output en el s3. Los objetos estan organizados por carpetas y los puntos asociados (punto1a, punto1b...)
+
 1. Se tiene un conjunto de datos, que representan el salario anual de los empleados formales en Colombia por sector económico, según la DIAN. 
 
   Programa en Map/Reduce, con hadoop en Python, que permita calcular:
@@ -225,19 +216,26 @@ Se creo un archivo llamado mrjob.conf con las siguientes configuraciones
 </p>
 	
    - EMR
-
+ 
 	     cd DIAN
+	     
+ Luego copiamos los datos a un directorio 
+
 	     hdfs dfs -put dataempleados.txt hdfs:///user/admin/dataempleados.txt
 	     python a_avrg_salary_se_mr.py hdfs:///user/admin/dataempleados.txt -r hadoop --output-dir hdfs:///user/admin/punto1a
+	     
+Y verificamos con el siguiente comando 
+
 	     hdfs dfs -cat /user/admin/punto1a/*
 
 ![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/cfc2561c-a56f-4aba-8d9a-dacec465ded9)
 
 ![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/0fb88f5a-3b69-4c0f-b6b8-0831018ff33a)
 
-en s3 
+Output en s3 
 
 	      python a_avrg_salary_se_mr.py hdfs:///user/admin/dataempleados.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p1a
+	      hdfs dfs -cat s3://mjgutierre-reto5-emr/test1/p1a/*
 	      
 ![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/a052aed6-62e3-41d1-b518-6fee4e964764)
 
