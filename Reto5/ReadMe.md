@@ -68,7 +68,7 @@ Con los siguientes comandos crearemos un cluster a traves de la consola de AWS C
 
 - Nombre: emr-MyClusterEMR
 - Amazon EMR release: emr-6.10.0
--Aplicaciones
+- Aplicaciones
   - Hue 4.4.0
   - Spark 2.4.3
   - Hadoop 2.8.5
@@ -136,7 +136,6 @@ Una vez dentro se ejecutaron los siguientes comandos
      cd st0263-2023-1/"Laboratorio N6-MapReduce"/wordcount
      python wordcount-local.py ../../datasets/gutenberg-small/*.txt > salida-serial.txt
      more salida-serial.txt
-     sudo nano salida-serial.txt
      
  Este sera nuestro resultado
 
@@ -165,27 +164,25 @@ Se creo un archivo llamado mrjob.conf con las siguientes configuraciones
 
     runners:
       emr:
-        aws_access_key_id: ASIATQCL7MV5UJ4NY3SX
-        aws_secret_access_key: iVUauQd6yTU6JZAb/4f9bli2P+Bw1Zc9kriNx/an
-        ec2_key_pair: emr-key1
-        ec2_key_pair_file: ~/.ssh/emr-key1.pem
-        region: us-east-1
-        emr_job_flow_id: j-DAAR86LTN744
+          aws_access_key_id:ASIATQCL7MV5ZPJCK6EN 
+          aws_secret_access_key: zP7e2hn0zEuIHcewCVzdapqNpjQeQlNp86ERoLSA
+          aws_session_token: FwoGZXIvYXdzEJn//////////wEaDHOYkX7B0Lua0VX9OCLIAb6delJoTwisMafvmSHRcUWHPfYkxFGJQgaXL9wjRgCa0VErQ67t1Sg4p5wj6bNi10l+vlAPFo6zhhRSABLCZraXJnK7t6VtKn/HjenmyOee3mrW5irlXAIX5E9Vm7C1Xri2py4iVHbdnsFkXnjPsAK8mlxl08GjBCZJGN/Ap35D4Qn/ZRzB490/srjT8AQ/M4C+brbw2BJacZn1WxvvFKGNVGu5CVOFU12mqkysmxcwGaYyB8JlU1VRBpF3O5n9tvk5X5tyyKTnKLX34qMGMi1tr4X1c2+oJR6LDSCDzMAEQo2l6rJeyzQSo1XgUQzdUdILjbshd8ya8S8yfMo=
+          region: us-east-1
+          ec2_key_pair: emr-key1
+          ec2_key_pair_file: ~/.ssh/emr-key1.pem
+          ssh_tunnel: true
+          emr_job_flow_id: j-1PET2VX7YRRR2
 
-El comando sig ejecuta un programa Python llamado wordcount-mr.py en un entorno Hadoop utilizando Hadoop Streaming. El programa cuenta las palabras en varios archivos de texto ubicados en el directorio hdfs:///datasets/gutenberg-small/ y guarda los resultados en el directorio hdfs:///user/<login>/result3.
+El comando sig ejecuta un programa Python llamado wordcount-mr.py en un entorno Hadoop utilizando Hadoop Streaming. El programa cuenta las palabras en varios archivos de texto ubicados en el directorio hdfs:///datasets/gutenberg-small/ y guarda los resultados en el directorio hdfs:///user/ec2/result3.
 
-	python your_mr_job_sub_class.py -r emr < input > output
+	  hdfs dfs -copyFromLocal /home/hadoop/st0263-2023-1/datasets/ /user/
 
-	python wordcount-mr.py -r hadoop hdfs:///datasets/gutenberg-small/*.txt --output-dir hdfs:///user/ec2-user/result3 --hadoop-streaming-jar $HADOOP_STREAMING_HOME/hadoop-streaming.jar
+    python wordcount-mr.py hdfs:///user/datasets/gutenberg-small/*.txt -r hadoop --output-dir hdfs:///user/result3
+   
 	
 	
-	
-	
-	
-	
-	
-	
-	![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/97984e4b-fc5a-432c-b84f-19f0104c48eb)
+
+![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/97984e4b-fc5a-432c-b84f-19f0104c48eb)
 
   
 ## Reto de Programación en Map/Reduce
