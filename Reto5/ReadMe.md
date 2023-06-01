@@ -62,8 +62,9 @@ Podemos observar que en nuestra cuenta ya se encuentra el s3 bucket.
 
 Con los siguientes comandos crearemos un cluster a traves de la consola de AWS CLI
     
-    aws emr create-cluster --name emr-MyClusterEMR --release-label emr-6.10.0 --service-role EMR_DefaultRole --ec2-attributes KeyName=emr-key1,InstanceProfile=EMR_EC2_DefaultRole  --applications Name=Hue Name=Spark Name=Hadoop Name=Sqoop Name=Hive  --log-uri s3://mjgutierre-lab-emr/logs --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m4.large InstanceGroupType=CORE,InstanceCount=2,InstanceType=m4.large InstanceGroupType=TASK,InstanceCount=1,InstanceType=m4.large --no-auto-terminate
-    
+    aws emr create-cluster --name emr-MyClusterEMR --release-label emr-6.10.0 --service-role EMR_DefaultRole --ec2-attributes KeyName=emr-key1,InstanceProfile=EMR_EC2_DefaultRole  --applications Name=Hue Name=Spark Name=Hadoop Name=Sqoop Name=Hive  --log-uri s3://mjgutierre-reto5-emr/logs/ --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m4.large InstanceGroupType=CORE,InstanceCount=2,InstanceType=m4.large InstanceGroupType=TASK,InstanceCount=1,InstanceType=m4.large --no-termination-protected
+
+
 **Los valores configurados fueron:**
 
 - Nombre: emr-MyClusterEMR
