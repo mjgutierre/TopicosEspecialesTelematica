@@ -226,6 +226,22 @@ Se creo un archivo llamado mrjob.conf con las siguientes configuraciones
 	
    - EMR
 
+	     cd DIAN
+	     hdfs dfs -put dataempleados.txt hdfs:///user/admin/dataempleados.txt
+	     python a_avrg_salary_se_mr.py hdfs:///user/admin/dataempleados.txt -r hadoop --output-dir hdfs:///user/admin/punto1a
+	     hdfs dfs -cat /user/admin/punto1a/*
+
+![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/cfc2561c-a56f-4aba-8d9a-dacec465ded9)
+
+![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/0fb88f5a-3b69-4c0f-b6b8-0831018ff33a)
+
+en s3 
+
+	      python a_avrg_salary_se_mr.py hdfs:///user/admin/dataempleados.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p1a
+	      
+![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/a052aed6-62e3-41d1-b518-6fee4e964764)
+
+
   **b. El salario promedio por Empleado**
 	
   - Local
@@ -238,6 +254,18 @@ Se creo un archivo llamado mrjob.conf con las siguientes configuraciones
 
    - EMR
 
+	     python b_avrg_salary_emp_mr.py hdfs:///user/admin/dataempleados.txt -r hadoop --output-dir hdfs:///user/admin/punto1b
+	     hdfs dfs -cat /user/admin/punto1b/*
+
+![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/70d48b8b-2d29-4707-9401-7a79cff60623)
+
+en s3 
+
+		python b_avrg_salary_emp_mr.py hdfs:///user/admin/dataempleados.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p1b
+
+![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/9c263680-0b8d-4dcd-8624-5a4fbbc46d52)
+
+		
   **c. Número de SE por Empleado que ha tenido a lo largo de la estadística**
 	
   - Local
@@ -249,9 +277,20 @@ Se creo un archivo llamado mrjob.conf con las siguientes configuraciones
 </p>
 
    - EMR
+
+	      python c_se_emp_mr.py hdfs:///user/admin/dataempleados.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p1c	  	     
+	     
+![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/558e3932-095d-4c6f-9b8a-0864f1304d0c)
+	
+	
+![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/6b431dd3-aa76-4666-a270-8645d828efb3)
+
 	
 2. Se tiene un conjunto de acciones de la bolsa, en la cual se reporta a diario el valor promedio por acción, la estructura de los datos es (archivo: dataempresas.csv):
 
+	    cd Acciones
+	    hdfs dfs -put dataempresas.txt hdfs:///user/admin/dataempresas.txt
+  
   Programa en Map/Reduce, con hadoop en Python, que permita calcular:
 
 **a. Por acción, dia-menor-valor, día-mayor-valor**
@@ -260,13 +299,16 @@ Se creo un archivo llamado mrjob.conf con las siguientes configuraciones
 	
 	       python a_minmax_mr.py  dataempresas.txt
 	
-REVISAR LOGICA DE CODIGO 
-	
 <p align="center">
   <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/b711097a-19c5-47ef-84b3-b83a812c5174" alt="RESULTADOS EMPRESAS LOCAL" width="" height="" style="display: block; margin: auto;">
 </p>
 	
   - EMR		
+
+	       python a_minmax_mr.py hdfs:///user/admin/dataempresas.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p2a	
+	       
+	      
+
 	
 **b. Listado de acciones que siempre han subido o se mantienen estables.**
 	
@@ -280,6 +322,8 @@ REVISAR LOGICA DE CODIGO
 	
   - EMR	
 
+	        python b_estable_mr.py hdfs:///user/admin/dataempresas.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p2b
+
 **c. DIA NEGRO: Día en el que la mayor cantidad de acciones tienen el menor valor de acción (DESPLOME), suponiendo una inflación independiente del tiempo.**
 	
   - Local	
@@ -291,16 +335,18 @@ REVISAR LOGICA DE CODIGO
 </p>
 	
   - EMR	
+
+		python c_dianegro_mr.py hdfs:///user/admin/dataempresas.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p2c
+
+![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/821f8774-c5f3-4c0e-94ec-a48bcddbb23b)
+
 	
 3. Sistema de evaluación de películas: Se tiene un conjunto de datos en el cual se evalúan las películas con un rating.
 
+		cd Peliculas
+	        hdfs dfs -put datapeliculas.txt hdfs:///user/admin/datapeliculas.txt
+		
   Realizar un programa en Map/Reduce, con hadoop en Python, que permita calcular:
-
-
-Número de usuarios que ven una misma película y el rating promedio
-Día en que peor evaluación en promedio han dado los usuarios
-Día en que mejor evaluación han dado los usuarios
-La mejor y peor película evaluada por genero
 	
 	
  **a. Número de películas vista por un usuario, valor promedio de calificación**
@@ -314,7 +360,9 @@ La mejor y peor película evaluada por genero
 </p>
 	
   - EMR		
-
+  
+		python a.py hdfs:///user/admin/datapeliculas.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p3a
+		
  **b. Día en que más películas se han visto**
 	
   - Local	
@@ -326,6 +374,8 @@ La mejor y peor película evaluada por genero
 </p>
 	
   - EMR	
+	
+	       python b_masPelisFecha_mr.py hdfs:///user/admin/datapeliculas.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p3b
 	
  **c. Día en que menos películas se han visto**
 	
@@ -339,6 +389,8 @@ La mejor y peor película evaluada por genero
 	
   - EMR
 
+		python c_menosPelisFecha_mr.py hdfs:///user/admin/datapeliculas.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p3c
+
  **d. Número de usuarios que ven una misma película y el rating promedio**
 	
   - Local	
@@ -350,6 +402,8 @@ La mejor y peor película evaluada por genero
 </p>
 	
   - EMR
+  
+		python d.py hdfs:///user/admin/datapeliculas.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p3d
 
 **e. Día en que mejor evaluación en promedio han dado los usuarios**
 	
@@ -362,6 +416,8 @@ La mejor y peor película evaluada por genero
 </p>
 	
   - EMR
+
+		python e.py hdfs:///user/admin/datapeliculas.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p3e
 
 **f. Día en que mejor evaluación en promedio han dado los usuarios**
 	
@@ -375,17 +431,7 @@ La mejor y peor película evaluada por genero
 	
   - EMR
 
-**e. Día en que mejor evaluación en promedio han dado los usuarios**
-	
-  - Local	
-	
-	       python e.py datapeliculas.txt
-		
-<p align="center">
-  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/1276a323-ec0a-4232-8b60-94798853e04f" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
-</p>
-	
-  - EMR
+		python f.py hdfs:///user/admin/datapeliculas.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p3f
 
 **g. La mejor y peor película evaluada por genero**
 	
@@ -399,7 +445,12 @@ La mejor y peor película evaluada por genero
 	
   - EMR
 
+		python g.py hdfs:///user/admin/datapeliculas.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p3g
   
+  Con el siguiente comando descargamos las pruebas 
+  
+  		aws s3 sync s3://mjgutierre-reto5-emr/test1/ C:\Users\USER\Downloads\Pruebasaws
+		
 # Referencias
 - [Uso de AWS CLI](https://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-chap-using.html)
 - [Amazon S3](https://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-services-s3.html)
