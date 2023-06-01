@@ -198,7 +198,13 @@ Se creo un archivo llamado mrjob.conf con las siguientes configuraciones
 Acá podremos encontrar las [pruebas generadas por aws](https://github.com/mjgutierre/TopicosEspecialesTelematica/tree/master/Reto5/Pruebasaws) y ejecutadas desde el cluster como output en el s3. Los objetos estan organizados por carpetas y los puntos asociados (punto1a, punto1b...)
 
 1. Se tiene un conjunto de datos, que representan el salario anual de los empleados formales en Colombia por sector económico, según la DIAN. 
-
+  
+	   cd DIAN
+	   
+     Luego copiamos los datos a un directorio 
+	     
+	   hdfs dfs -put dataempleados.txt hdfs:///user/admin/dataempleados.txt
+	     
   Programa en Map/Reduce, con hadoop en Python, que permita calcular:
 
   **a. El salario promedio por Sector Económico (SE)**
@@ -213,11 +219,6 @@ Acá podremos encontrar las [pruebas generadas por aws](https://github.com/mjgut
 	
    - EMR
  
-	     cd DIAN
-	     
- Luego copiamos los datos a un directorio 
-
-	     hdfs dfs -put dataempleados.txt hdfs:///user/admin/dataempleados.txt
 	     python a_avrg_salary_se_mr.py hdfs:///user/admin/dataempleados.txt -r hadoop --output-dir hdfs:///user/admin/punto1a
 	     
 Y verificamos con el siguiente comando 
