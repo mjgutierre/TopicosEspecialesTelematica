@@ -140,10 +140,8 @@ Una vez dentro se ejecutaron los siguientes comandos
      
  Este sera nuestro resultado
 
-![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/b0e2f7f3-b7e9-4f56-b471-746eb6842d3a)
-
 <p align="center">
-  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/f895b370-7164-49b4-89f1-40ed0bb5d06c" alt="ingreso a emr por ssh" width="" height="" style="display: block; margin: auto;">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/f0e7b4b0-b255-4c88-845b-f3bb372391e8" alt="ingreso a emr por ssh" width="" height="" style="display: block; margin: auto;">
 </p>
 
 Como parte del sistema, se instalará mrjob así:
