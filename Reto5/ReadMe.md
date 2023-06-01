@@ -16,7 +16,7 @@ Ejecutar la versión serial/secuencial de la aplicación de wordcount-local.py. 
 
 # 2. Documentación Técnica 
 
-## Preparación del entorno
+## Preparación del entorno (Reto1)
 
 [Descarga AWS CLI desde la pagina oficial de AWS](https://docs.aws.amazon.com/es_es/cli/latest/userguide/getting-started-install.html)
 
@@ -37,6 +37,7 @@ Después con las credenciales de IAM de nuestra sesion en AWS ejecutaremos los s
 </p>
 
 ## Creación de Bucket S3 en consola AWS CLI
+
 
 Luego de configurar las credenciales, ejecutaremos el siguiente comando para crear el bucket s3://mjgutierre-reto5-emr
 
@@ -107,7 +108,7 @@ Y este es el resultado arrojado
 
 ![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/8ba13706-06e2-43de-8284-3120c0e68c53)
 
-## Ejecución de la versión serial de una aplicación (wordcount-local.py) desde el main node cluster
+## Ejecución de la versión serial de una aplicación (wordcount-local.py) desde el main node cluster (Reto2)
 
 Para continuar con nuestro reto, ingresamos desde consola al man node de nuestro cluster creado. 
 
@@ -154,11 +155,43 @@ Como parte del sistema, se instalará mrjob así:
      
      cd wordcount
      python wordcount-mr.py ../../datasets/gutenberg-small/*.txt
-     
+
   Y este es nuestro resultado 
   
 ![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/fdd67602-9d14-4bfb-961c-fdb967ac3553)
 ![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/f2ba79a8-da91-45d9-bfbe-04a29f14c030)
+
+
+Copiamos el dataset en nuestro emr
+
+    hdfs dfs -mkdir /user/admin
+	  hdfs dfs -copyFromLocal /home/hadoop/st0263-2023-1/datasets/ /user/admin/
+
+Y luego ejecuramos con 
+
+    python wordcount-mr.py hdfs:///user/admin/datasets/gutenberg-small/*.txt -r hadoop --output-dir hdfs:///user/admin/result3
+   
+Este comando ejecuta un programa Python llamado wordcount-mr.py en un entorno Hadoop utilizando Hadoop Streaming. El programa cuenta las palabras en varios archivos de texto ubicados en el directorio hdfs:///datasets/gutenberg-small/ y guarda los resultados en el directorio hdfs:///user/admin/result3.
+
+Tendremos un resultado como este
+
+![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/97984e4b-fc5a-432c-b84f-19f0104c48eb)
+
+
+Se clona el repositorio donde estan los codigos 
+
+      git clone https://github.com/mjgutierre/TopicosEspecialesTelematica.git
+      cd TopicosEspecialesTelematica/Reto5/MapReduce
+
+Luego copiamos los datos a un directorio 
+
+     hdfs dfs -put dataempleados.txt hdfs:///user/admin/dataempleados.txt
+     
+Y ejecutamos 
+
+      python a_avrg_salary_se_mr.py hdfs:///user/admin/dataempleados.txt -r hadoop --output-dir hdfs:///user/admin/punto1a
+
+Para obtener el siguiente resultado
 
 
 Se creo un archivo llamado mrjob.conf con las siguientes configuraciones
@@ -174,19 +207,8 @@ Se creo un archivo llamado mrjob.conf con las siguientes configuraciones
           ssh_tunnel: true
           emr_job_flow_id: j-1PET2VX7YRRR2
 
-El comando sig ejecuta un programa Python llamado wordcount-mr.py en un entorno Hadoop utilizando Hadoop Streaming. El programa cuenta las palabras en varios archivos de texto ubicados en el directorio hdfs:///datasets/gutenberg-small/ y guarda los resultados en el directorio hdfs:///user/ec2/result3.
-
-	  hdfs dfs -copyFromLocal /home/hadoop/st0263-2023-1/datasets/ /user/
-
-    python wordcount-mr.py hdfs:///user/datasets/gutenberg-small/*.txt -r hadoop --output-dir hdfs:///user/result3
-   
-	
-	
-
-![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/97984e4b-fc5a-432c-b84f-19f0104c48eb)
-
   
-## Reto de Programación en Map/Reduce
+## Reto de Programación en Map/Reduce (Reto3)
 
 1. Se tiene un conjunto de datos, que representan el salario anual de los empleados formales en Colombia por sector económico, según la DIAN. 
 
