@@ -441,7 +441,9 @@ en s3
 
 		python g.py hdfs:///user/admin/datapeliculas.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p3g
   
-  Con el siguiente comando descargamos las pruebas 
+  ## AYUDAS
+  
+  Con el siguiente comando descargamos las pruebas en nuestra maquina local
   
   		aws s3 sync s3://mjgutierre-reto5-emr/test1/ C:\Users\USER\Downloads\Pruebasaws
 		
