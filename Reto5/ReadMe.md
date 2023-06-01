@@ -161,7 +161,7 @@ Como parte del sistema, se instalará mrjob así:
 Copiamos el dataset en nuestro emr
 
     hdfs dfs -mkdir /user/admin/
-	  hdfs dfs -copyFromLocal /home/hadoop/st0263-2023-1/datasets/ /user/admin/
+    hdfs dfs -copyFromLocal /home/hadoop/st0263-2023-1/datasets/ /user/admin/
 
 Y luego ejecuramos con 
 
@@ -229,17 +229,22 @@ Y verificamos con el siguiente comando
 
 	     hdfs dfs -cat /user/admin/punto1a/*
 
-![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/cfc2561c-a56f-4aba-8d9a-dacec465ded9)
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/cfc2561c-a56f-4aba-8d9a-dacec465ded9" alt="RESULTADOS DIAN EMR CONSOLA" width="" height="" style="display: block; margin: auto;">
+</p>
 
-![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/0fb88f5a-3b69-4c0f-b6b8-0831018ff33a)
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/0fb88f5a-3b69-4c0f-b6b8-0831018ff33a" alt="RESULTADOS DIAN EMR" width="" height="" style="display: block; margin: auto;">
+</p>
 
 Output en s3 
 
 	      python a_avrg_salary_se_mr.py hdfs:///user/admin/dataempleados.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p1a
 	      hdfs dfs -cat s3://mjgutierre-reto5-emr/test1/p1a/*
 	      
-![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/a052aed6-62e3-41d1-b518-6fee4e964764)
-
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/a052aed6-62e3-41d1-b518-6fee4e964764" alt="RESULTADOS DIAN EMR S3" width="" height="" style="display: block; margin: auto;">
+</p>
 
   **b. El salario promedio por Empleado**
 	
@@ -256,15 +261,18 @@ Output en s3
 	     python b_avrg_salary_emp_mr.py hdfs:///user/admin/dataempleados.txt -r hadoop --output-dir hdfs:///user/admin/punto1b
 	     hdfs dfs -cat /user/admin/punto1b/*
 
-![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/70d48b8b-2d29-4707-9401-7a79cff60623)
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/70d48b8b-2d29-4707-9401-7a79cff60623" alt="RESULTADOS DIAN EMR CONSOLA" width="" height="" style="display: block; margin: auto;">
+</p>
 
-en s3 
+Output en s3 
 
 		python b_avrg_salary_emp_mr.py hdfs:///user/admin/dataempleados.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p1b
 
-![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/9c263680-0b8d-4dcd-8624-5a4fbbc46d52)
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/9c263680-0b8d-4dcd-8624-5a4fbbc46d52" alt="RESULTADOS DIAN EMR S3" width="" height="" style="display: block; margin: auto;">
+</p>
 
-		
   **c. Número de SE por Empleado que ha tenido a lo largo de la estadística**
 	
   - Local
@@ -279,12 +287,14 @@ en s3
 
 	      python c_se_emp_mr.py hdfs:///user/admin/dataempleados.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p1c	  	     
 	     
-![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/558e3932-095d-4c6f-9b8a-0864f1304d0c)
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/558e3932-095d-4c6f-9b8a-0864f1304d0c" alt="RESULTADOS DIAN S3 CONSOLA" width="" height="" style="display: block; margin: auto;">
+</p>
 	
-	
-![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/6b431dd3-aa76-4666-a270-8645d828efb3)
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/6b431dd3-aa76-4666-a270-8645d828efb3" alt="RESULTADOS DIAN S3" width="" height="" style="display: block; margin: auto;">
+</p>
 
-	
 2. Se tiene un conjunto de acciones de la bolsa, en la cual se reporta a diario el valor promedio por acción, la estructura de los datos es (archivo: dataempresas.csv):
 
 	    cd Acciones
@@ -337,9 +347,12 @@ en s3
 
 		python c_dianegro_mr.py hdfs:///user/admin/dataempresas.txt -r hadoop --output-dir s3://mjgutierre-reto5-emr/test1/p2c
 
-![image](https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/821f8774-c5f3-4c0e-94ec-a48bcddbb23b)
+Aqui tenemos la verificacion de las pruebas para los 3 codigos 
 
-	
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/821f8774-c5f3-4c0e-94ec-a48bcddbb23b" alt="RESULTADOS EMPRESAS S3" width="" height="" style="display: block; margin: auto;">
+</p>
+
 3. Sistema de evaluación de películas: Se tiene un conjunto de datos en el cual se evalúan las películas con un rating.
 
 		cd Peliculas
