@@ -308,13 +308,74 @@ La mejor y peor película evaluada por genero
 	
   - Local	
 	
-	       python .py  datapeliculas.txt
+	       python c_menosPelisFecha_mr.py datapeliculas.txt
 		
 <p align="center">
-  <img src="" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/0f77ffa4-7b47-4948-a70d-d95b76af9c03" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
 </p>
 	
-  - EMR	
+  - EMR
+
+ **d. Número de usuarios que ven una misma película y el rating promedio**
+	
+  - Local	
+	
+	       python d.py datapeliculas.txt
+		
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/05dac064-b4fd-4ec4-974e-cbbe5f19c754" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+  - EMR
+
+**e. Día en que mejor evaluación en promedio han dado los usuarios**
+	
+  - Local	
+	
+	       python e.py datapeliculas.txt
+		
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/1276a323-ec0a-4232-8b60-94798853e04f" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+  - EMR
+
+**f. Día en que mejor evaluación en promedio han dado los usuarios**
+	
+  - Local	
+	
+	       python f.py datapeliculas.txt
+		
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/91405b76-49e7-45dc-9e85-7d74e8da290e" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+  - EMR
+
+**e. Día en que mejor evaluación en promedio han dado los usuarios**
+	
+  - Local	
+	
+	       python e.py datapeliculas.txt
+		
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/1276a323-ec0a-4232-8b60-94798853e04f" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+  - EMR
+
+**g. La mejor y peor película evaluada por genero**
+	
+  - Local	
+	
+	       python g.py datapeliculas.txt
+		
+<p align="center">
+  <img src="https://github.com/mjgutierre/TopicosEspecialesTelematica/assets/68908889/8a5ab7c3-3321-467b-bb28-2bbcc3b93d6b" alt="RESULTADOS PELICULAS LOCAL" width="" height="" style="display: block; margin: auto;">
+</p>
+	
+  - EMR
+
   
 # Referencias
 - [Uso de AWS CLI](https://docs.aws.amazon.com/es_es/cli/latest/userguide/cli-chap-using.html)
