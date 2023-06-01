@@ -8,11 +8,7 @@
 
 # 1. Descripción de la actividad
 
-Despliegue un cluster EMR en su cuenta de AWS Academy, teniendo en cuenta la guia para esto.
-
-Reto: Consulte como realizar la implementación del cluster via AWS CLI. En el informe debe enviar la evidencia de los diferentes comandos que tuvo que ejecutar para poder instanciar el cluster EMR. Adjunte el paso a paso con los diferentes pantallazos de evidencia.
-
-Ejecutar la versión serial/secuencial de la aplicación de wordcount-local.py. Esto lo puede ejecutar en el main node del clúster EMR. 
+Despliegue un cluster EMR en su cuenta de AWS Academy, bucket s3 con uso de hadoop para el almacenamiento de codigos ejecutando datasets de gran tamaño.
 
 # 2. Documentación Técnica 
 
