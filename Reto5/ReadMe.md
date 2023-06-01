@@ -62,12 +62,12 @@ Podemos observar que en nuestra cuenta ya se encuentra el s3 bucket.
 
 Con los siguientes comandos crearemos un cluster a traves de la consola de AWS CLI
     
-    aws emr create-cluster --name emr-MyClusterEMR --release-label emr-5.26.0 --service-role EMR_DefaultRole --ec2-attributes KeyName=emr-key1,InstanceProfile=EMR_EC2_DefaultRole  --applications Name=Hue Name=Spark Name=Hadoop Name=Sqoop Name=Hive --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m4.large InstanceGroupType=CORE,InstanceCount=2,InstanceType=m4.large InstanceGroupType=TASK,InstanceCount=1,InstanceType=m4.large --no-auto-terminate
+    aws emr create-cluster --name emr-MyClusterEMR --release-label emr-6.10.0 --service-role EMR_DefaultRole --ec2-attributes KeyName=emr-key1,InstanceProfile=EMR_EC2_DefaultRole  --applications Name=Hue Name=Spark Name=Hadoop Name=Sqoop Name=Hive  --log-uri s3://mjgutierre-lab-emr/logs --instance-groups InstanceGroupType=MASTER,InstanceCount=1,InstanceType=m4.large InstanceGroupType=CORE,InstanceCount=2,InstanceType=m4.large InstanceGroupType=TASK,InstanceCount=1,InstanceType=m4.large --no-auto-terminate
     
 **Los valores configurados fueron:**
 
 - Nombre: emr-MyClusterEMR
-- Amazon EMR release: emr-5.26.0
+- Amazon EMR release: emr-6.10.0
 -Aplicaciones
   - Hue 4.4.0
   - Spark 2.4.3
@@ -124,8 +124,8 @@ Se tendra el siguiente resultado
 
 Luego ejecutaremos dentro de nuestra consola los siguientes comandos para actualizar nuestro paquete yum e instalar git:
 
-    sudo yum update
-    sudo yum install git
+    sudo yum update -y
+    sudo yum install git -y
     
 Luego clonaremos el repositorio 
     
@@ -148,8 +148,8 @@ Una vez dentro se ejecutaron los siguientes comandos
 
 Como parte del sistema, se instalará mrjob así:
 
-    sudo yum install python-pip
-    sudo pip install mrjob
+    sudo yum install python-pip -y
+    sudo pip3 install mrjob
     sudo pip install boto3
     
   Probamos mrjob con python local:
